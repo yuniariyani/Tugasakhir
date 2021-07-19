@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AnggotaTani;
-use App\Models\Lahan;
+use App\Models\RelationGroup;
 class AnggotaController extends Controller
 {
     /**
@@ -26,7 +26,8 @@ class AnggotaController extends Controller
      */
     public function create()
     {
-        return view ('kelompok.Create-anggota');
+        $hin = RelationGroup::all();
+        return view ('kelompok.Create-anggota',compact('hin'));
     }
 
     /**
@@ -42,9 +43,7 @@ class AnggotaController extends Controller
             'nama_petani' => $request->nama_petani,
             'nohp' => $request->nohp,
             'jabatan' => $request->jabatan,
-            'nama_kelompok' => $request->nama_kelompok,
-            'wilayah_lahan' => $request ->wilayah_lahan,
-            'alamat_lahan_contoh' => $request ->alamat_lahan_contoh,
+            'relation_group_id' => $request->relation_group_id,
              
              
         ]);  
@@ -71,9 +70,9 @@ class AnggotaController extends Controller
      */
    public function edit_function($id)
     {
-     
+        $hin = RelationGroup::all();
         $peg = AnggotaTani::findorfail($id);
-        return view ('kelompok.Edit',compact('peg'));
+        return view ('kelompok.Edit-anggota',compact('peg','hin'));
         
     }
 

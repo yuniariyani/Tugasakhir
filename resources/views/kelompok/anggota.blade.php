@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Anggota Kelompok')
+@section('title','Anggota Kelompok Tani')
 @push('custom-css')
 <style>
     body{
@@ -9,7 +9,7 @@
 </style>
 @endpush
 @section('content')
-@section('title2','Anggota Kelompok')
+@section('title2','Anggota Kelompok Tani')
 @section('title1','Anggota Kelompok')
 
 
@@ -38,8 +38,7 @@
                     <th>Nama Petani</th>
                     <th>Jabatan</th>
                     <th>NoHP</th>
-                    <th>Wilayah Lahan</th>
-                    <th>Alamat Lahan Percontohan</th>
+        
                     <th>Aksi</th>
                   </tr>
 
@@ -49,12 +48,11 @@
                     @foreach ($dtanggota as $item)
                   <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $item->nama_kelompok }}</td>
+                    <td>{{ $item->relasigroup->nama_kelompok }}</td>
                     <td>{{ $item->nama_petani }}</td>
                     <td>{{ $item->jabatan }}</td>
                     <td>{{ $item->nohp }}</td>
-                    <td>{{ $item->wilayah_lahan }}</td>
-                    <td>{{ $item->alamat_lahan_contoh }}</td>
+                
                     
                    
                     <td>

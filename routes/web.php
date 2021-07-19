@@ -59,8 +59,6 @@ Route::get('/click_edit/{id}','App\Http\Controllers\AnggotaController@edit_funct
 Route::get('/delete-anggota/{id}','App\Http\Controllers\AnggotaController@destroy')->name('delete-anggota');
 Route::post('/update-anggota/{id}','App\Http\Controllers\AnggotaController@update')->name('update-anggota');
 
-//Route Fitur Kelompok Tani
-Route::get('/poktan','App\Http\Controllers\PoktanController@index')->name('poktan');
 
 //Route Fitur Komoditas
 Route::get('/komoditas','App\Http\Controllers\KomoditasController@index')->name('komoditas');
@@ -69,3 +67,9 @@ Route::post('/simpan-komoditas','App\Http\Controllers\KomoditasController@store'
 Route::get('/edit-komoditas/{id}','App\Http\Controllers\KomoditasController@edit')->name('edit-komoditas');
 Route::post('/update-komoditas/{id}','App\Http\Controllers\KomoditasController@update')->name('update-komoditas');
 Route::get('/delete-komoditas/{id}','App\Http\Controllers\KomoditasController@destroy')->name('delete-komoditas');
+
+//Route Fitur Poktan
+Route::get('/kelompoktani','App\Http\Controllers\RelationgroupController@index')->name('kelompoktani');
+Route::get('/create-kelompoktani','App\Http\Controllers\RelationGroupController@create')->name('create-kelompoktani');
+Route::post('/simpan-kelompoktani','App\Http\Controllers\RelationGroupController@store')->name('simpan-kelompoktani');
+Route::get('/delete-kelompoktani/{id}','App\Http\Controllers\RelationGroupController@destroy')->name('delete-kelompoktani');

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\BlokLahan;
 use App\Models\RelationGroup;
-class KomoditasController extends Controller
+class RelationgroupController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,9 @@ class KomoditasController extends Controller
      */
     public function index()
     {
-     $dtblok = BlokLahan::all();
-     return view ('kelompok.komoditas',compact('dtblok'));
+        $dtkelompok = RelationGroup::all();
+        return view ('kelompok.kelompoktani',compact('dtkelompok'));
+    
     }
 
     /**
@@ -25,8 +25,7 @@ class KomoditasController extends Controller
      */
     public function create()
     {
-           $hun = RelationGroup::all();
-           return view ('kelompok.Create-komoditas',compact('hun'));
+        return view ('kelompok.Create-KelompokTani');
     }
 
     /**
@@ -37,15 +36,15 @@ class KomoditasController extends Controller
      */
     public function store(Request $request)
     {
-          BlokLahan::create([
-            'relation_group_id' => $request->relation_group_id,
-            'nama_blok' => $request->nama_blok,
-            'luas_blok' => $request->luas_blok,
-            'komoditas' => $request->komoditas,
-            'tanggal_tanam' => $request->tanggal_tanam,
-          ]);
+           RelationGroup::create([
+            'nama_kelompok' => $request->nama_kelompok,
+            'total_anggota' => $request->total_anggota,
+            'wilayah_lahan' => $request->wilayah_lahan,
+            'alamat_lahan' => $request->alamat_lahan,
+          
+        ]);
 
-          return redirect('komoditas');
+           return redirect('kelompoktani');
     }
 
     /**
@@ -67,9 +66,7 @@ class KomoditasController extends Controller
      */
     public function edit($id)
     {
-        $hun = RelationGroup::all();
-        $pug = BlokLahan::findorfail($id);
-        return view ('kelompok.Edit-komoditas', compact('pug','hun'));
+        //
     }
 
     /**
@@ -81,11 +78,7 @@ class KomoditasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pug = BlokLahan::findorfail($id);
-        $pug->update($request->all());
-        
-        return redirect('komoditas');
-        
+        //
     }
 
     /**
@@ -96,9 +89,8 @@ class KomoditasController extends Controller
      */
     public function destroy($id)
     {
-         $peg = BlokLahan::findorfail($id);
-         $peg->delete();
+         $pig = RelationGroup::findorfail($id);
+         $pig->delete();
          return back()->with('info','dihapus');
-        
     }
 }

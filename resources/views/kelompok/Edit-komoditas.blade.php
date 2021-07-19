@@ -17,7 +17,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group">
-                        <select class="form-control select2" name="anggota_id" id="anggota_id" placeholder="Nama Kelompok">
+                        <select class="form-control select2" name="relation_group_id" id="relation_group_id" placeholder="Nama Kelompok">
 
                         <option disabled value>Pilih kelompok</option>
                             @foreach ($hun as $item)
