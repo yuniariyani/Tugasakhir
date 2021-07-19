@@ -20,9 +20,21 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
-Route::get('/kelompok', function () {
-    return view('kelompok');
+
+//Route::get('/anggota', function () {
+    //return view('kelompok.anggota');
+//});
+
+Route::get('/komoditas', function () {
+    return view('komoditas');
 });
+
+Route::get('/user', function () {
+    return view('user');
+});
+
+
+
 
 Route::get('login','App\Http\Controllers\AuthController@index')->name('login');
 Route::post('proses_login','App\Http\Controllers\AuthController@proses_login')->name('proses_login');
@@ -38,3 +50,22 @@ Route::group(['middleware'=>['auth']], function(){
         
     });
 });
+
+
+Route::get('/anggota','App\Http\Controllers\AnggotaController@index')->name('anggota');
+Route::get('/create-anggota','App\Http\Controllers\AnggotaController@create')->name('create-anggota');
+Route::post('/simpan-anggota','App\Http\Controllers\AnggotaController@store')->name('simpan-anggota');
+Route::get('/click_edit/{id}','App\Http\Controllers\AnggotaController@edit_function')->name('click_edit');
+Route::get('/delete-anggota/{id}','App\Http\Controllers\AnggotaController@destroy')->name('delete-anggota');
+Route::post('/update-anggota/{id}','App\Http\Controllers\AnggotaController@update')->name('update-anggota');
+
+//Route Fitur Kelompok Tani
+Route::get('/poktan','App\Http\Controllers\PoktanController@index')->name('poktan');
+
+//Route Fitur Komoditas
+Route::get('/komoditas','App\Http\Controllers\KomoditasController@index')->name('komoditas');
+Route::get('/create-komoditas','App\Http\Controllers\KomoditasController@create')->name('create-komoditas');
+Route::post('/simpan-komoditas','App\Http\Controllers\KomoditasController@store')->name('simpan-komoditas');
+Route::get('/edit-komoditas/{id}','App\Http\Controllers\KomoditasController@edit')->name('edit-komoditas');
+Route::post('/update-komoditas/{id}','App\Http\Controllers\KomoditasController@update')->name('update-komoditas');
+Route::get('/delete-komoditas/{id}','App\Http\Controllers\KomoditasController@destroy')->name('delete-komoditas');
