@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Komoditas')
+@section('title','Kelompok Tani')
 @push('custom-css')
 <style>
     body{
@@ -9,8 +9,8 @@
 </style>
 @endpush
 @section('content')
-@section('title2','Komoditas Kelompok Tani')
-@section('title1','komoditas')
+@section('title2','Kelompok Tani')
+@section('title1','Kelompok Tani')
 
 
 
@@ -23,7 +23,7 @@
               <!-- /.card-header -->
                 <div class="card-body">
                  <div class="timeline-header ">
-                    <a href="{{ route('create-komoditas') }}" class="btn btn-success btn-sm " >Tambah Komoditas</a>
+                    <a href="{{ route('create-kelompoktani') }}" class="btn btn-success btn-sm " >Tambah Poktan</a>
                   </div>
 
                  <div class="card-body">
@@ -36,33 +36,32 @@
                   <tr>
                     <th>No</th>
                     <th>Nama Kelompok</th>
-                    <th>Nama Blok</th>
-                    <th>Luas Blok(Ha)</th>
-                    <th>Komoditas</th>
-                    <th>Tanggal Tanam</th>
+                    <th>Jumlah anggota</th>
+                    <th>Wilayah Lahan</th>
+                    <th>Alamat Lahan Percontohan</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
                    
-                
-                    @foreach ($dtblok as $tem)
+                  
+                     @foreach ($dtkelompok as $item)
                    <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $tem->relasigroup->nama_kelompok}}</td>
-                    <td>{{ $tem->nama_blok }}</td>
-                    <td>{{ $tem->luas_blok }}</td>
-                    <td>{{ $tem->komoditas }}</td>
-                    <td>{{ $tem->tanggal_tanam}}</td>
+                    <td>{{ $item->nama_kelompok }}</td>
+                    <td>{{ $item->total_anggota }}</td>
+                    <td>{{ $item->wilayah_lahan }}</td>
+                    <td>{{ $item->alamat_lahan }}</td>
+                  
                  
                       <td>
-                      <a href="{{ url('edit-komoditas',$tem->id) }}"><i class="fas fa-edit"></i></a> 
-                      | <a href="{{ url('delete-komoditas',$tem->id) }}"><i class="fas fa-trash-alt" style="color:red"></i></a>
+                      <a href=""><i class="fas fa-edit"></i></a> 
+                      | <a href="{{ url('delete-kelompoktani',$item->id)}}"><i class="fas fa-trash-alt" style="color:red"></i></a>
 
                     </td>
                     </tr>
-                     @endforeach
-                 
+     
+                    @endforeach
                     </tbody>
         
                  

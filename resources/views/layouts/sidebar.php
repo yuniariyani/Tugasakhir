@@ -32,7 +32,13 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-            
+
+               <li class="nav-item">
+                <a href="/kelompoktani" class="nav-link" style="color:#FFFFFF">
+                  <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
+                  <p>Poktan</p>
+                </a>
+              </li>
             
               <li class="nav-item">
                 <a href="/anggota" class="nav-link" style="color:#FFFFFF">
@@ -43,7 +49,7 @@
               <li class="nav-item">
                 <a href="/komoditas" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Komoditas</p>
+                  <p>Komoditas Kelompok</p>
                 </a>
               </li>
               <li class="nav-item">

@@ -10,9 +10,10 @@ class BlokLahan extends Model
     protected $table = "blok_lahan";
     protected $primaryKey = "id";
     protected $fillable = [
-       'id','anggota_id','nama_blok','luas_blok','komoditas','tanggal_tanam'];
+       'id','relation_group_id','nama_blok','luas_blok','komoditas','tanggal_tanam'];
 
-       public function anggota(){
-       return $this->belongsTo(AnggotaTani::class, 'anggota_id');
+       public function relasigroup(){
+       return $this->belongsTo(RelationGroup::class, 'relation_group_id');
        }
 }
+

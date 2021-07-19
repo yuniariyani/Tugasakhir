@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Anggota Kelompok')
+@section('title','Tambah Komoditas Tani')
 @push('custom-css')
 <style>
     body{
@@ -9,8 +9,8 @@
 </style>
 @endpush
 @section('content')
-@section('title2','Form Anggota Kelompok Tani')
-@section('title1','Anggota Kelompok')
+@section('title2','Form Komoditas Kelompok Tani')
+@section('title1','Komoditas')
 
 
  <section class="content">
@@ -33,7 +33,7 @@
 
                         
                        <div class="form-group">
-                        <select class="form-control select2" name="anggota_id" id="anggota_id" placeholder="Nama Kelompok">
+                        <select class="form-control select2" name="relation_group_id" id="relation_group_id" placeholder="Nama Kelompok">
 
                         <option disabled value>Pilih kelompok</option>
                             @foreach ($hun as $item)

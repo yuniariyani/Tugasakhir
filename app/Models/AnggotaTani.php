@@ -10,14 +10,11 @@ class AnggotaTani extends Model
     protected $table = "anggota_tani";
     protected $primaryKey = "id";
     protected $fillable = [
-       'id','nama_petani','nohp','jabatan','nama_kelompok', 'wilayah_lahan','alamat_lahan_contoh'];
+       'id','nama_petani','nohp','jabatan','relation_group_id'];
 
-       
-       //public function tesLahan(){
-      // return $this->belongsTo(Lahan::class, 'lahan_id');
 
-      public function tesanggota(){
+     public function relasigroup(){
+       return $this->belongsTo(RelationGroup::class, 'relation_group_id');
+       }
 
-     return $this->hasMany(BlokLahan::class);
-}//}
 }
