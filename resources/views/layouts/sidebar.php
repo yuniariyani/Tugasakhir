@@ -185,7 +185,7 @@
           </li>
 
            <li class="nav-item">
-            <a href="../calendar.html" class="nav-link" style="color:#FFFFFF">
+            <a href="logout" class="nav-link" style="color:#FFFFFF">
               <i class="nav-icon fas fa-sign-out-alt" style="color:#FFFFFF"></i>
               <p>
                 Logout
