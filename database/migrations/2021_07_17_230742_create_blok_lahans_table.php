@@ -14,12 +14,12 @@ class CreateBlokLahansTable extends Migration
     public function up()
     {
         Schema::create('blok_lahan', function (Blueprint $table) {
-            $table->id('id_blok');
-            $table->string('nama_kelompok',100);
+            $table->id();
+            $table->BigInteger('relation_group_id');
             $table->string('nama_blok',100);
             $table->integer('luas_blok');
-            $table->bigInteger('komoditas_id');
-            $table->bigInteger('id_lahan');
+            $table->string('komoditas',100);
+            $table->date('tanggal_tanam');
             $table->timestamps();
         });
     }

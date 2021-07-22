@@ -29,9 +29,6 @@ Route::get('/komoditas', function () {
     return view('komoditas');
 });
 
-Route::get('/user', function () {
-    return view('user');
-});
 
 
 
@@ -73,3 +70,9 @@ Route::get('/kelompoktani','App\Http\Controllers\RelationgroupController@index')
 Route::get('/create-kelompoktani','App\Http\Controllers\RelationGroupController@create')->name('create-kelompoktani');
 Route::post('/simpan-kelompoktani','App\Http\Controllers\RelationGroupController@store')->name('simpan-kelompoktani');
 Route::get('/delete-kelompoktani/{id}','App\Http\Controllers\RelationGroupController@destroy')->name('delete-kelompoktani');
+
+//Route Fitur User Management
+Route::get('/user','App\Http\Controllers\UserMController@index')->name('user');
+Route::get('/create-user','App\Http\Controllers\UserMController@create')->name('create-user');
+Route::post('/simpan-user','App\Http\Controllers\UserMController@store')->name('simpan-user');
+Route::get('/delete-user/{id}','App\Http\Controllers\UserMController@destroy')->name('delete-user');

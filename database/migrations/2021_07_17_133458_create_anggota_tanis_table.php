@@ -18,8 +18,7 @@ class CreateAnggotaTanisTable extends Migration
             $table->string('nama_petani', 200);
             $table->integer('nohp');
             $table->string('jabatan', 100);
-            $table->bigInteger('lahan_id');
-            $table->string('nama_kelompok', 100);
+            $table->bigInteger('relation_group_id');
             $table->timestamps();
         });
 
