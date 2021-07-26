@@ -21,6 +21,7 @@ class RelationGroup extends Model
 
     return $this->hasOne(BlokLahan::class);
     }
+<<<<<<< HEAD
     public function monitoringlahan(){
 
         return $this->hasMany(monitoring::class);
@@ -34,3 +35,6 @@ class RelationGroup extends Model
         return $this->hasMany(masalah::class);
         }
     }
+=======
+}
+>>>>>>> ea8b9277b39de875075171eefe9cc75e8cd65a83
