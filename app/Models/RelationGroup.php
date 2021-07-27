@@ -13,12 +13,14 @@ class RelationGroup extends Model
        'id','nama_kelompok','alamat_lahan','total_anggota','wilayah_lahan'];
 
     public function tesbloklahan(){
-
     return $this->hasMany(BlokLahan::class);
     }
 
     public function tesanggota(){
-
     return $this->hasOne(BlokLahan::class);
+    }
+
+    public function tesproyek(){
+    return $this->hasMany(Proyek::class);
     }
 }

@@ -55,7 +55,7 @@
               <li class="nav-item">
                 <a href="../layout/fixed-sidebar.html" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Meeting [Optional]</p>
+                  <p>Penyuluhan</p>
                 </a>
               </li>
             </ul>
@@ -65,21 +65,39 @@
             <a href="#" class="nav-link" style="color:#FFFFFF">
               <i class="nav-icon fas fa-dollar-sign" style="color:#FFFFFF"></i>
               <p>
-                Perencanaan
+                Aktivitas Dana Proyek
                 <i class="right fas fa-angle-left" style="color:#FFFFFF"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../charts/chartjs.html" class="nav-link" style="color:#FFFFFF">
+                <a href="/proyek" class="nav-link routeIs('/proyek') ? 'active' : '' }}" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Biaya Target</p>
+                  <p>Proyek Kelompok Tani</p>
+                </a>
+              </li>
+                <li class="nav-item">
+                <a href="/costbaseline" class="nav-link" style="color:#FFFFFF">
+                  <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
+                  <p>Cost Baseline</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../charts/flot.html" class="nav-link" style="color:#FFFFFF">
+                <a href="/aktualcost" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Biaya Aktual</p>
+                  <p>Actual Cost</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/progress" class="nav-link" style="color:#FFFFFF">
+                  <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
+                  <p>Progress Report</p>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="/issue" class="nav-link" style="color:#FFFFFF">
+                  <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
+                  <p>Issue Proyek</p>
                 </a>
               </li>
             </ul>
@@ -163,16 +181,7 @@
             </ul>
           </li>
 
-             <li class="nav-item">
-            <a href="#" class="nav-link" style="color:#FFFFFF">
-              <i class="nav-icon fas fa-chart-pie" style="color:#FFFFFF"></i>
-              <p>
-                Gap Analysis
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-            </ul>
-          </li>
+          
 
           <li class="nav-header">Settings</li>
           <li class="nav-item">
