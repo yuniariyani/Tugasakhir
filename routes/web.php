@@ -48,6 +48,28 @@ Route::group(['middleware'=>['auth']], function(){
     });
 });
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::resource('monitoringLahans', App\Http\Controllers\monitoring_lahanController::class);
+
+Route::resource('monitorings', App\Http\Controllers\monitoringController::class);
+
+Route::resource('iklims', App\Http\Controllers\iklimController::class);
+
+Route::resource('masalahs', App\Http\Controllers\masalahController::class);
+
+Route::get('monitorings/kelompok/{id}', 'App\Http\Controllers\monitoringController@empKelompok');
+
+Route::get('iklims/poktan/{id}', 'App\Http\Controllers\iklimController@empPoktan');
+
+Route::get('masalahs/masalah/{id}', 'App\Http\Controllers\masalahController@empMasalah');
+
+Route::get('masalahs/solusi/{id}', 'App\Http\Controllers\masalahController@solusi')->name('masalahs.solusi');
+
+
 
 Route::get('/anggota','App\Http\Controllers\AnggotaController@index')->name('anggota');
 Route::get('/create-anggota','App\Http\Controllers\AnggotaController@create')->name('create-anggota');
@@ -76,6 +98,7 @@ Route::get('/user','App\Http\Controllers\UserMController@index')->name('user');
 Route::get('/create-user','App\Http\Controllers\UserMController@create')->name('create-user');
 Route::post('/simpan-user','App\Http\Controllers\UserMController@store')->name('simpan-user');
 Route::get('/delete-user/{id}','App\Http\Controllers\UserMController@destroy')->name('delete-user');
+
 
 //Route Fitur Proyek
 Route::get('/proyek','App\Http\Controllers\ProyekController@index')->name('proyek');
@@ -144,3 +167,4 @@ Route::post('/simpan-detailaktual','App\Http\Controllers\DetailAktualController@
 Route::get('/edit-detailaktual/{id}','App\Http\Controllers\DetailAktualController@edit')->name('edit-detailaktual');
 Route::post('/update-detailaktual/{id}','App\Http\Controllers\DetailAktualController@update')->name('update-detailaktual');
 Route::get('/delete-detailaktual/{id}','App\Http\Controllers\DetailAktualController@destroy')->name('delete-detailaktual');
+

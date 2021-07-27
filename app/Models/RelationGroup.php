@@ -20,7 +20,21 @@ class RelationGroup extends Model
     return $this->hasOne(BlokLahan::class);
     }
 
+
     public function tesproyek(){
     return $this->hasMany(Proyek::class);
     }
-}
+    public function monitoringlahan(){
+
+        return $this->hasMany(monitoring::class);
+        }
+    public function iklim(){
+
+        return $this->hasMany(iklim::class);
+        }
+    public function masalah(){
+
+        return $this->hasMany(masalah::class);
+        }
+    }
+
