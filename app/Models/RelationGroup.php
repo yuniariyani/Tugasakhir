@@ -13,15 +13,17 @@ class RelationGroup extends Model
        'id','nama_kelompok','alamat_lahan','total_anggota','wilayah_lahan'];
 
     public function tesbloklahan(){
-
     return $this->hasMany(BlokLahan::class);
     }
 
     public function tesanggota(){
-
     return $this->hasOne(BlokLahan::class);
     }
-<<<<<<< HEAD
+
+
+    public function tesproyek(){
+    return $this->hasMany(Proyek::class);
+    }
     public function monitoringlahan(){
 
         return $this->hasMany(monitoring::class);
@@ -35,6 +37,4 @@ class RelationGroup extends Model
         return $this->hasMany(masalah::class);
         }
     }
-=======
-}
->>>>>>> ea8b9277b39de875075171eefe9cc75e8cd65a83
+

@@ -23,9 +23,9 @@ class AkunSeeder extends Seeder
             ],
             [
             'username' => 'user',
-            'name' => 'ini adalah developer',
-            'email' => 'developer@example.com',
-            'level' => 'developer',
+            'name' => 'ini adalah penyuluh',
+            'email' => 'penyuluh@example.com',
+            'level' => 'penyuluh',
             'password' => bcrypt ('123456'),
             ]
             ];

@@ -14,6 +14,11 @@
    font-size: 80%;
    color: blue;
    }
+
+   body{
+       background-image: url('gambar1.jpg');
+       background-size: 100%;
+   }
 </style>
     <head>
         <meta charset="utf-8"/>
@@ -80,7 +85,7 @@
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputPassword">NIP</label>
+                                                <label class="small mb-1" for="inputPassword">Password</label>
                                                 <input
                                                     class="form-control py-4"
                                                     id="inputPassword"
