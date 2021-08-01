@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-success navbar-light" style="color:#FFFFFF">
+<nav class="main-header navbar navbar-expand  navbar-light" style="background-color: #198754;" role="navigation">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -9,9 +9,8 @@
     <!-- Right navbar links -->
      <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown no-arrow">
-        <a class="nav-link" href="#" id="userDropdown" role="button" style="color:#FFFFFF" data-togle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user-circle fa-fw"></i>
-            <span class="hidden-xs"> Yuni Ariyani Arifin </span>
+          <i class="fas fa-user-circle fa-fw"  style="color:#FFFFFF"></i>
+            <span class="hidden-xs p-2 "  style="color:#FFFFFF" > Admin </span>
         </a>
      </li> 
     </ul>
