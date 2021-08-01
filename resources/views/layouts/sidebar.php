@@ -1,18 +1,16 @@
-<aside class="main-sidebar navbar-success elevation-4">
+<aside class="main-sidebar elevation-4" style="background-color: #198754;">
     <!-- Brand Logo -->
-    <a href="assets/index3.html" class="brand-link">
 
+    <br>
+    <a href="" class="brand-link">
       <span class="brand-text font-weight-light" style="color:#FFFFFF"><center><h4><b>AGRIKITA</b></h4></center></span>
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar">
-
+    <div class="sidebar" id="scrollspy">
       <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+      <nav class="mt-1">
+        <ul class="nav nav-sidebar" data-widget="treeview" role="menu" >
 
           <li class="nav-item">
             <a href="dashboard" class="nav-link" style="color:#FFFFFF">
@@ -65,7 +63,7 @@
             <a href="#" class="nav-link" style="color:#FFFFFF">
               <i class="nav-icon fas fa-dollar-sign" style="color:#FFFFFF"></i>
               <p>
-                Aktivitas Dana Proyek
+                Aktivitas Dana 
                 <i class="right fas fa-angle-left" style="color:#FFFFFF"></i>
               </p>
             </a>
@@ -73,7 +71,7 @@
               <li class="nav-item">
                 <a href="/proyek" class="nav-link routeIs('/proyek') ? 'active' : '' }}" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Proyek Kelompok Tani</p>
+                  <p>Bantuan Kelompok Tani</p>
                 </a>
               </li>
                 <li class="nav-item">
@@ -183,7 +181,7 @@
 
           
 
-          <li class="nav-header">Settings</li>
+          <li class="nav-header"  style="color:#FFFFFF">Settings</li>
           <li class="nav-item">
             <a href="user" class="nav-link" style="color:#FFFFFF">
               <i class="nav-icon fas fa-users" style="color:#FFFFFF"></i>

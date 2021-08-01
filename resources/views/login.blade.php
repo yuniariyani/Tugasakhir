@@ -8,27 +8,26 @@
    font-size: 16px;
    }
    .tiga {
-   font-size: 80%;
+   font-size: 70%;
    }
    span {
    font-size: 80%;
    color: blue;
    }
+   
 
    body{
-       background-image: url('gambar1.jpg');
+       background-image: url('cekk.jpg');
        background-size: 100%;
+       background-color: rgba(0,0,0,0.5) !important;"
+       
+       
    }
+   
 </style>
     <head>
-        <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <meta name="description" content=""/>
-        <meta name="author" content=""/>
-        <title>Login Form - PPL</title>
+       
+        <title>Login Agrikita</title>
         <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -37,13 +36,14 @@
             crossorigin="anonymous"></script>
     </head>
     <body class="bg-success">
-        <div id="layoutAuthentication">
-            <div id="layoutAuthentication_content">
+        <div id="">
+            <div id="">
                 <main>
                     <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-5">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <br>
+                        <div class="d-flex justify-content-center" >
+                            <div class="col-lg-4  mt-5 p-4" style="background-color: rgba(0,0,0,0.5) !important;"  >
+                                <div class=" border-2 ">
                                     {{-- Error Alert --}}
                                     @if(session('error'))
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -53,11 +53,12 @@
                                         </button>
                                     </div>
                                     @endif
-                                    <div class="card-header">
-                                        <h3 class="text-center font-weight-light my-3"><b><h3>WELCOME<h3></b></h3>
+                                    <br>
+                                    <div class="card-title" >
+                                        <h3 class="text-center font-weight my-4" style="color:#FFFFFF"  ><b><h3>WELCOME<h3></b></h3>
                                           <h9 class="text-center tiga">Balai Penyuluhan Pertanian Mamuju</h9>
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body mb-0" style="background-color: rgba(0,0,0,0.7) !important;" >
                                         <form action="{{url('proses_login')}}" method="POST" id="logForm">
                                             {{ csrf_field() }}
                                             <div class="form-group">
@@ -73,7 +74,7 @@
                                                         </button>
                                                     </div>
                                                     @enderror
-                                                <label class="small mb-1" for="inputEmailAddress">Username</label>
+                                                <label class="small mb-1" style="color:#FFFFFF" for="inputEmailAddress">Username</label>
                                                 <input
                                                     class="form-control py-4"
                                                     id="inputEmailAddress"
@@ -85,7 +86,7 @@
                                                 @endif
                                             </div>
                                             <div class="form-group">
-                                                <label class="small mb-1" for="inputPassword">Password</label>
+                                                <label class="small mb-1" style="color:#FFFFFF" for="inputPassword">Password</label>
                                                 <input
                                                     class="form-control py-4"
                                                     id="inputPassword"
@@ -96,13 +97,15 @@
                                                 <span class="error">{{ $errors->first('password') }}</span>
                                                 @endif
                                             </div>
-                                            <div
-                                                class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                                              <div
+                                                class="form-group d-flex align-items-center justify-content-between mt-3 mb-0">
                                     
                                                 <button class="btn btn-success btn-block" type="submit">Login</button>
                                             </div>
+                                          
                                         </form>
                                     </div>
+                                     
                                     </div>
                                 </div>
                             </div>

@@ -42,13 +42,13 @@ Route::group(['middleware'=>['auth']], function(){
         Route::get('admin','App\Http\Controllers\AdminController@index')->name('admin');
     });
 
-    Route::group(['middleware' => ['cek_login:developer']], function(){
+    Route::group(['middleware' => ['cek_login:penyuluh']], function(){
           Route::get('developer','App\Http\Controllers\DeveloperController@index')->name('developer');
         
     });
 });
 
-Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

@@ -1,8 +1,8 @@
 @extends('layouts.main')
-@section('title','Proyek Kelompok Tani')
+@section('title','Bantuan Kelompok Tani')
 @section('content')
-@section('title2','Proyek Kelompok Tani')
-@section('title1','Proyek Kelompok Tani')
+@section('title2','Bantuan Kelompok Tani')
+@section('title1','Bantuan Kelompok Tani')
 
 
  <section class="content">
