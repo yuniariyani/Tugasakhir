@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property integer $kadar_air
  * @property integer $suhu_tanah
  * @property string $ph
- * @property string $subur
+ * @property string $status_kesuburan
  * @property integer $kelembaban
  */
 class monitoring extends Model
@@ -39,7 +39,7 @@ class monitoring extends Model
         'kadar_air',
         'suhu_tanah',
         'ph',
-        'subur',
+        'status_kesuburan',
         'kelembaban',
         'relationgroup_id'
     ];
@@ -51,11 +51,11 @@ class monitoring extends Model
      */
     protected $casts = [
         'tanggal' => 'date',
-        'komoditas' => 'string',
+        'komoditas' => 'integer',
         'kadar_air' => 'integer',
         'suhu_tanah' => 'integer',
-        'ph' => 'string',
-        'subur' => 'string',
+        'ph' => 'integer',
+        'status_kesuburan' => 'string',
         'kelembaban' => 'integer',
         'relationgroup_id' => 'integer'
     ];
@@ -71,7 +71,7 @@ class monitoring extends Model
         'kadar_air' => 'required',
         'suhu_tanah' => 'required',
         'ph' => 'required',
-        'subur' => 'required',
+        'status_kesuburan' => 'required',
         'kelembaban' => 'required',
         'relationgroup_id' => 'required'
     ];
@@ -79,6 +79,10 @@ class monitoring extends Model
     public function kelompok(){
 
         return $this->belongsTo(RelationGroup::class, 'relationgroup_id');
+        }
+    public function jenis(){
+
+        return $this->belongsTo(BlokLahan::class, 'komoditas');
         }
     }
 

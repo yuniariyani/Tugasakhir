@@ -17,10 +17,10 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
 
+Route::get('/api', function () {
+    return view('api');
+});
 //Route::get('/anggota', function () {
     //return view('kelompok.anggota');
 //});
@@ -49,13 +49,14 @@ Route::group(['middleware'=>['auth']], function(){
 });
 
 
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::resource('monitoringLahans', App\Http\Controllers\monitoring_lahanController::class);
 
 Route::resource('monitorings', App\Http\Controllers\monitoringController::class);
+
+Route::resource('dashboard', App\Http\Controllers\DashboardController::class);
 
 Route::resource('iklims', App\Http\Controllers\iklimController::class);
 
