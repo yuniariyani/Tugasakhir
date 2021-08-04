@@ -11,6 +11,7 @@ use Flash;
 use Response;
 use App\Models\RelationGroup;
 use App\Models\monitoring;
+use App\Models\BlokLahan;
 
 class monitoringController extends AppBaseController
 {
@@ -31,10 +32,11 @@ class monitoringController extends AppBaseController
      */
     public function index(Request $request)
     {
+        $jenis = BlokLahan::all();
         $monitorings = $this->monitoringRepository->all();
         $kelompok = RelationGroup::all();
         $selected = " ";
-        return view('monitorings.index', compact('monitorings', 'kelompok', 'selected'));
+        return view('monitorings.index', compact('monitorings', 'kelompok', 'selected', 'jenis'));
            
     }
 
@@ -55,8 +57,10 @@ class monitoringController extends AppBaseController
      */
     public function create()
     {
+        $komoditas = BlokLahan::all()->pluck('komoditas', 'id');
         $poktan = RelationGroup::all()->pluck('nama_kelompok', 'id');
-        return view('monitorings.create', compact('poktan'));
+
+        return view('monitorings.create', compact('poktan', 'komoditas'));
     }
 
     /**
@@ -104,10 +108,10 @@ class monitoringController extends AppBaseController
     {
         $monitoring = $this->monitoringRepository->find($id);
         $poktan = RelationGroup::all()->pluck('nama_kelompok', 'id');
-        
+        $komoditas = BlokLahan::all()->pluck('komoditas', 'id');
       
 
-        return view('monitorings.edit', compact('monitoring', 'poktan'));
+        return view('monitorings.edit', compact('monitoring', 'poktan', 'komoditas'));
     }
 
     /**

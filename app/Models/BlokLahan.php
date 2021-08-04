@@ -14,9 +14,24 @@ class BlokLahan extends Model
 
        public function relasigroup(){
        return $this->belongsTo(RelationGroup::class, 'relation_group_id');
+
     }
        public function masalahLahan(){
 
         return $this->hasMany(masalahLahan::class);
     }
+     public function monitoringLahan(){
+
+        return $this->hasMany(monitoringLahan::class);
+    }
+    public function monitoringIklim(){
+
+        return $this->hasMany(monitoringIklim::class);
+    }
+    
 }
+
+       
+
+
+

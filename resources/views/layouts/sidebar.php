@@ -15,7 +15,7 @@
                with font-awesome or any other icon font library -->
 
           <li class="nav-item">
-            <a href="#" class="nav-link" style="color:#FFFFFF">
+            <a href="dashboard" class="nav-link" style="color:#FFFFFF">
               <i class="nav-icon fas fa-tachometer-alt" style="color:#FFFFFF"></i>
               <p>
                 Dashboard
@@ -32,22 +32,24 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/kelompok" class="nav-link" style="color:#FFFFFF">
+
+               <li class="nav-item">
+                <a href="/kelompoktani" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Kelompok</p>
+                  <p>Poktan</p>
+                </a>
+              </li>
+            
+              <li class="nav-item">
+                <a href="/anggota" class="nav-link" style="color:#FFFFFF">
+                  <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
+                  <p>Anggota Kelompok</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../layout/top-nav-sidebar.html" class="nav-link" style="color:#FFFFFF">
+                <a href="/komoditas" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Anggota Detail</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../layout/boxed.html" class="nav-link" style="color:#FFFFFF">
-                  <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Komoditas</p>
+                  <p>Komoditas Kelompok</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -174,7 +176,7 @@
 
           <li class="nav-header">Settings</li>
           <li class="nav-item">
-            <a href="../calendar.html" class="nav-link" style="color:#FFFFFF">
+            <a href="user" class="nav-link" style="color:#FFFFFF">
               <i class="nav-icon fas fa-users" style="color:#FFFFFF"></i>
               <p>
                 User Management
@@ -183,7 +185,7 @@
           </li>
 
            <li class="nav-item">
-            <a href="../calendar.html" class="nav-link" style="color:#FFFFFF">
+            <a href="logout" class="nav-link" style="color:#FFFFFF">
               <i class="nav-icon fas fa-sign-out-alt" style="color:#FFFFFF"></i>
               <p>
                 Logout

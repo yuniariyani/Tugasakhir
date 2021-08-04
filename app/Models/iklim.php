@@ -47,7 +47,7 @@ class iklim extends Model
     protected $casts = [
         'tanggal' => 'date',
         'kelompok_tani' => 'integer',
-        'komoditas' => 'string',
+        'komoditas' => 'integer',
         'cuaca' => 'string',
         'suhu' => 'string'
         
@@ -69,6 +69,10 @@ class iklim extends Model
 
     public function poktan(){
         return $this->belongsTo(RelationGroup::class, 'kelompok_tani');
+        }
+    public function jenis(){
+
+        return $this->belongsTo(BlokLahan::class, 'komoditas');
         }
     
 }
