@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Proyek;
+use App\Models\BantuanDana;
 use App\Models\Issue;
 
 class IssueController extends Controller
@@ -13,12 +13,24 @@ class IssueController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $dtissue = Issue::all(); 
-        return view('issue.issue', compact('dtissue'));
+        $nama_bantuan= BantuanDana::all();
+        $selected = ""; 
+        return view('issue.issue', compact('dtissue','nama_bantuan','selected'));
          
     }
+    public function empBantuan($id)
+    {
+   
+        $dtissue = Issue::where('bantuan_dana_id', $id)->get();
+        $nama_bantuan = BantuanDana::all();
+        $selected = BantuanDana::where('id', $id)->get()->first();
+        $selected = $selected->id;
+        return view('issue.issue', compact('dtissue', 'nama_bantuan', 'selected'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -27,7 +39,7 @@ class IssueController extends Controller
      */
     public function create()
     {
-        $hin = Proyek::all();
+        $hin = BantuanDana::all();
         return view ('issue.create-issue',compact('hin'));
     }
 
@@ -40,7 +52,7 @@ class IssueController extends Controller
     public function store(Request $request)
     {
          Issue::create([
-            'proyek_id' => $request->proyek_id,
+            'bantuan_dana_id' => $request->bantuan_dana_id,
             'masalah' => $request->masalah,
             'deskripsi' => $request->deskripsi,
             'tingkat' => $request ->tingkat,
@@ -71,7 +83,7 @@ class IssueController extends Controller
      */
     public function edit($id)
     {
-        $hin = Proyek::all();
+        $hin = BantuanDana::all();
         $peg = Issue::findorfail($id);
         return view ('issue.edit-issue',compact('peg','hin'));
     }

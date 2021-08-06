@@ -29,19 +29,35 @@
                     <form action="{{ route('simpan-kelompoktani') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
+                             <label for="exampleFormControlSelect1">Nama Kelompok</label>
                             <input type="text" id="nama_kelompok" name="nama_kelompok" class="form-control" placeholder="Nama kelompok">
                         </div>
                         <div class="form-group">
+                             <label for="exampleFormControlSelect1">Total anggota</label>
                             <input type="text" id="total_anggota" name="total_anggota" class="form-control" placeholder="Total Anggota">
                         </div>
-                        <div class="form-group">
-                            <input type="text" id="wilayah_lahan" name="wilayah_lahan" class="form-control" placeholder="Wilayah Lahan">
+                         <div class="form-group">
+                            <label for="exampleFormControlSelect1">Wilayah lahan</label>
+                            <select class="form-control" name="wilayah_lahan" id="wilayah_lahan" >
+                                    <option value="Kelurahan karema">Kelurahan Karema</option>
+                                    <option value="Kelurahan Binanga">Kelurahan Binanga</option>
+                                    <option value="Kelurahan Rimuku">Kelurahan Rimuku</option>
+                                    <option value="Desa Bambu">Desa Bambu</option>
+                                    <option value="Kelurahan Binanga">Kelurahan Binanga</option>
+                                    <option value="Desa Batu Pannu">Desa Batu Pannu</option>
+                                    <option value="Desa Tadui">Desa Tadui</option>
+                                    <option value="Kecamatan Mamuju">Kecamatan Mamuju</option>
+                                    <option value="Karampuang">Karampuang</option>
+                                    
+                            </select>
                         </div>
+                       
                         <div class="form-group">
+                             <label for="exampleFormControlSelect1">Alamat lahan percontohan</label>
                             <input type="text" id="alamat_lahan" name="alamat_lahan" class="form-control" placeholder="Alamat Lahan">
                         </div>
 
-                
+            
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-sm"> Simpan Data </button>
                         </div>

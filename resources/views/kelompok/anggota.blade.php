@@ -13,11 +13,31 @@
 @section('title1','Anggota Kelompok')
 
 
+
+
  <section class="content">
+
+ 
       <div class="container-fluid">
+
+      <h4 class=" h5 text-gray-800">Kelompok Tani</h4>
+      <select name="relation_group_id" id="relation_group_id" class="form-control" style="width:350px;"
+                    onchange="window.location.href=this.options[this.selectedIndex].value;">
+      <option value="{{ url('anggota') }}">Seluruh Kelompok</option>
+      @foreach($nama_kelompok as $k)
+      <option value="{{ url('anggota/anggotatani', $k->id) }}"
+      {{ $selected == $k->id ? 'selected' : null }}> {{ $k->nama_kelompok}}</option>
+      @endforeach   
+      </select> 
+      <br>
+      
         <div class="row">
           <div class="col-12">
             <div class="card">
+                 <div class="card-header">
+                <h3 class="card-title">Daftar detail anggota kelompok tani</h3>
+              </div>
+              
 
               <!-- /.card-header -->
               <div class="card-body">
@@ -51,7 +71,7 @@
                     <td>{{ $item->relasigroup->nama_kelompok }}</td>
                     <td>{{ $item->nama_petani }}</td>
                     <td>{{ $item->jabatan }}</td>
-                    <td>{{ $item->nohp }}</td>
+                    <td>0{{ $item->nohp }}</td>
                 
                     
                    

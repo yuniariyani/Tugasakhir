@@ -1,21 +1,26 @@
-<aside class="main-sidebar elevation-4" style="background-color: #198754;">
-    <!-- Brand Logo -->
 
-    <br>
+
+<aside class="main-sidebar elevation-4" style="background-color: #198754">
+    <!-- Brand Logo -->
     <a href="" class="brand-link">
       <span class="brand-text font-weight-light" style="color:#FFFFFF"><center><h4><b>AGRIKITA</b></h4></center></span>
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar" id="scrollspy">
+    <div class="sidebar">
+     
       <!-- Sidebar Menu -->
-      <nav class="mt-1">
-        <ul class="nav nav-sidebar" data-widget="treeview" role="menu" >
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+    
 
           <li class="nav-item">
             <a href="dashboard" class="nav-link" style="color:#FFFFFF">
               <i class="nav-icon fas fa-tachometer-alt" style="color:#FFFFFF"></i>
-              <p>
+              <p>              
                 Dashboard
               </p>
             </a>
@@ -34,7 +39,7 @@
                <li class="nav-item">
                 <a href="/kelompoktani" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Poktan</p>
+                  <p>Master Data Poktan</p>
                 </a>
               </li>
             
@@ -63,29 +68,18 @@
             <a href="#" class="nav-link" style="color:#FFFFFF">
               <i class="nav-icon fas fa-dollar-sign" style="color:#FFFFFF"></i>
               <p>
-                Aktivitas Dana 
+                Aktivitas Bantuan Dana
                 <i class="right fas fa-angle-left" style="color:#FFFFFF"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/proyek" class="nav-link routeIs('/proyek') ? 'active' : '' }}" style="color:#FFFFFF">
+                <a href="/bantuandana" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Bantuan Kelompok Tani</p>
+                  <p>Bantuan Dana Poktan</p>
                 </a>
               </li>
-                <li class="nav-item">
-                <a href="/costbaseline" class="nav-link" style="color:#FFFFFF">
-                  <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Cost Baseline</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/aktualcost" class="nav-link" style="color:#FFFFFF">
-                  <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Actual Cost</p>
-                </a>
-              </li>
+               
               <li class="nav-item">
                 <a href="/progress" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
@@ -95,7 +89,7 @@
                <li class="nav-item">
                 <a href="/issue" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Issue Proyek</p>
+                  <p>Issue Report</p>
                 </a>
               </li>
             </ul>
@@ -111,19 +105,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="monitorings" class="nav-link" style="color:#FFFFFF">
+                <a href="../UI/general.html" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
                   <p>Tanah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="iklims" class="nav-link" style="color:#FFFFFF">
+                <a href="../UI/icons.html" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
                   <p>Iklim</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="masalahs" class="nav-link" style="color:#FFFFFF">
+                <a href="../UI/buttons.html" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
                   <p>Masalah</p>
                 </a>
@@ -181,7 +175,7 @@
 
           
 
-          <li class="nav-header"  style="color:#FFFFFF">Settings</li>
+          <li class="nav-header" style="color:#FFFFFF">Settings</li>
           <li class="nav-item">
             <a href="user" class="nav-link" style="color:#FFFFFF">
               <i class="nav-icon fas fa-users" style="color:#FFFFFF"></i>

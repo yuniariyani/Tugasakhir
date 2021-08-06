@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DetailAktual;
-use App\Models\AktualCost;
+use App\Models\BantuanDana;
 
 class DetailAktualController extends Controller
 {
@@ -15,8 +15,8 @@ class DetailAktualController extends Controller
      */
     public function index()
     {
-         $dtaktual = DetailAktual::all();
-         return view('aktual.detailaktual',compact('dtaktual'));
+         $dtakt = DetailAktual::all();
+         return view('cost-baseline.cost-detail',compact('dtakt'));
     }
 
     /**
@@ -26,7 +26,7 @@ class DetailAktualController extends Controller
      */
     public function create()
     {
-        $hin = AktualCost::all();
+        $hin = BantuanDana::all();
         return view ('aktual.create-detailaktual',compact('hin'));
     }
 
@@ -41,9 +41,10 @@ class DetailAktualController extends Controller
          $request->validate([
             
           'tgl' => 'required',
-          'aktual_id' => 'required',
+          'bantuan_dana_id' => 'required',
           'item' => 'required',
           'sub_item' => 'required',
+          'spesifikasi' => 'required',
           'cost_day' => 'required',
           'quantity' => 'required',
           'total' => 'required',
@@ -55,9 +56,10 @@ class DetailAktualController extends Controller
 
       $data_progress = new DetailAktual;
       $data_progress->tgl= $request->tgl;
-      $data_progress->aktual_id = $request->aktual_id;
+      $data_progress->bantuan_dana_id = $request->bantuan_dana_id;
       $data_progress->item = $request->item;
       $data_progress->sub_item = $request->sub_item;
+      $data_progress->spesifikasi = $request->spesifikasi;
       $data_progress->cost_day = $request->cost_day;
       $data_progress->quantity = $request->quantity;
       $data_progress->total = $request->total;
@@ -66,7 +68,7 @@ class DetailAktualController extends Controller
       $image->move(public_path('img'), $new_image);
       $data_progress->save();
 
-      return redirect('detailaktual');
+      return redirect('detailcost');
     }
 
     /**
@@ -77,7 +79,7 @@ class DetailAktualController extends Controller
      */
     public function show($id)
     {
-        //
+     
     }
 
     /**
@@ -148,7 +150,7 @@ class DetailAktualController extends Controller
     );
       $data  = DetailAktual::find($id);
       $data->update($data_progress);
-      return redirect('detailaktual');
+      return redirect('detailcost');
       
     }
 

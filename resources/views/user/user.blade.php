@@ -23,7 +23,7 @@
               <!-- /.card-header -->
                 <div class="card-body">
                  <div class="timeline-header ">
-                    <a href="{{ route('create-user') }}" class="btn btn-success btn-sm " >Tambah User</a>
+                    <a href="{{ route('create-user') }}" class="btn btn-success btn-sm " ><span class="fas fa-plus p-1"></i></span>Tambah User</a>
                   </div>
 
                  <div class="card-body">
@@ -53,8 +53,8 @@
                  
                  
                       <td>
-                      <a href=""><i class="fas fa-edit"></i></a> 
-                      | <a href="{{ url('delete-user',$item->id) }}"><i class="fas fa-trash-alt" style="color:red"></i></a>
+                     
+                      <a href="{{ url('delete-user',$item->id) }}" class="btn btn-danger">Delete </a>
 
                     </td>
                     </tr>

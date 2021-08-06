@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title','Issue Proyek')
+@section('title','Issue Report')
 @push('custom-css')
 <style>
     body{
@@ -9,8 +9,8 @@
 </style>
 @endpush
 @section('content')
-@section('title2','Form Tambah Issue Proyek')
-@section('title1','Issue Proyek')
+@section('title2','Form Tambah Issue Report Bantuan Dana')
+@section('title1','Issue Report')
 
 
  <section class="content">
@@ -19,7 +19,7 @@
           <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                <h3 class="card-title">Create Issue Proyek</h3>
+                <h3 class="card-title">Create issue report penggunaan bantuan dana</h3>
               </div>
 
               <!-- /.card-header -->
@@ -30,27 +30,39 @@
                         {{ csrf_field() }}
 
                         <div class="form-group">
-                        <select class="form-control select2" name="proyek_id" id="proyek_id" placeholder="Nama Kelompok">
+                            <label for="exampleFormControlSelect1">Tgl/Bln/Thn Kejadian</label>
+                            <input type="date" id="tgl" name="tgl" class="form-control" style="width:200px;" placeholder="Tgl/Bln/Thn">
+                        </div>
 
-                        <option disabled value>kode_proyek</option>
+                        <div class="form-group">
+                        <label for="exampleFormControlSelect1">Kode Bantuan</label>
+                        <select class="form-control select2" name="bantuan_dana_id" id="bantuan_dana_id" placeholder="Nama Kelompok">
+
+                        <option disabled value>Kode Bantuan</option>
                             @foreach ($hin as $item)
-                        <option value="{{$item->id}}"> {{$item->kode_proyek}} </option>
+                        <option value="{{$item->id}}"> {{$item->nama_bantuan}} </option>
                             @endforeach
                         </select>
                        </div>
 
                         <div class="form-group">
-                            <input type="text" id="masalah" name="masalah" class="form-control" placeholder="Masalah Proyek">
+                            <label for="exampleFormControlSelect1"> Masalah</label>
+                            <input type="text" id="masalah" name="masalah" class="form-control" placeholder="Masalah">
                         </div>
                         <div class="form-group">
-                            <input type="text" id="deskripsi" name="deskripsi" class="form-control" placeholder="Deskripsi">
+                            <label for="exampleFormControlSelect1">Deskripsi Masalah</label>
+                            <textarea type="text" id="deskripsi" name="deskripsi" class="form-control" placeholder="Deskripsi"></textarea>
                         </div>
+                        
                         <div class="form-group">
-                            <input type="text" id="tingkat" name="tingkat" class="form-control" placeholder="Tingkat">
+                            <label for="exampleFormControlSelect1">Tingkat Keparahan Masalah</label>
+                            <select class="form-control" name="tingkat" id="tingkat" style="width:200px;" >
+                                    <option value="Rendah">Rendah</option>
+                                    <option value="Sedang">Sedang</option>
+                                    <option value="Parah">Parah</option>       
+                            </select>
                         </div>
-                        <div class="form-group">
-                            <input type="date" id="tgl" name="tgl" class="form-control" placeholder="Tgl/Bln/Thn">
-                        </div>
+                        
             
   
                         <div class="form-group">

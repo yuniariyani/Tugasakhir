@@ -21,7 +21,7 @@ class RelationGroup extends Model
     }
 
 
-    public function tesproyek(){
+    public function tesproyek(){                 //Delete Soon
     return $this->hasMany(Proyek::class);
     }
     public function monitoringlahan(){
@@ -36,5 +36,10 @@ class RelationGroup extends Model
 
         return $this->hasMany(masalah::class);
         }
+    
+    //Struktur Baru
+    public function rbantuandana(){            
+    return $this->hasMany(BantuanDana::class);
     }
+}
 
