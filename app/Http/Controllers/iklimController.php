@@ -11,7 +11,6 @@ use Flash;
 use Response;
 use App\Models\RelationGroup;
 use App\Models\iklim;
-use App\Models\BlokLahan;
 
 class iklimController extends AppBaseController
 {
@@ -32,13 +31,12 @@ class iklimController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $jenis = BlokLahan::all();
         $iklims = $this->iklimRepository->all();
         $poktan = RelationGroup::all();
         $selected = " ";
-        return view('iklims.index', compact('iklims', 'poktan', 'selected', 'jenis'));
+        return view('iklims.index', compact('iklims', 'poktan', 'selected'));
     }
-  //filtering nama kelompok tani
+
     public function empPoktan($id)
     {
    
@@ -49,6 +47,7 @@ class iklimController extends AppBaseController
         return view('iklims.index', compact('iklims', 'poktan', 'selected'));
     }
 
+
     /**
      * Show the form for creating a new iklim.
      *
@@ -56,11 +55,10 @@ class iklimController extends AppBaseController
      */
     public function create()
     {
-        $komoditas = BlokLahan::all()->pluck('komoditas', 'id');
         $kelompok_tani = RelationGroup::all()->pluck('nama_kelompok', 'id');
-        return view('iklims.create', compact('kelompok_tani', 'komoditas'));
+        return view('iklims.create', compact('kelompok_tani'));
 
-      
+        return view('iklms.create');
     }
 
     /**
@@ -107,7 +105,6 @@ class iklimController extends AppBaseController
      */
     public function edit($id)
     {
-        $komoditas = BlokLahan::all()->pluck('komoditas', 'id');
         $kelompok_tani = RelationGroup::all()->pluck('nama_kelompok', 'id');
         $iklim = $this->iklimRepository->find($id);
 
@@ -115,7 +112,7 @@ class iklimController extends AppBaseController
 
         
         
-        return view('iklims.edit', compact('iklim', 'kelompok_tani', 'komoditas'));
+        return view('iklims.edit', compact('iklim', 'kelompok_tani'));
     }
 
     /**

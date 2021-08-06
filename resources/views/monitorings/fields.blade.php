@@ -23,7 +23,7 @@
 <!-- Komoditas Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('komoditas', 'Komoditas:') !!}
-    {!! Form::select('komoditas', $komoditas, null,['class' => 'form-control','placeholder']) !!}
+    {!! Form::text('komoditas', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Kadar Air Field -->
@@ -44,13 +44,14 @@
     {!! Form::text('ph', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Subur Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('subur', 'Subur:') !!}
+    {!! Form::text('subur', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Kelembaban Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('kelembaban', 'Kelembaban:') !!}
     {!! Form::number('kelembaban', null, ['class' => 'form-control']) !!}
-</div>
-
-<div class="form-group col-sm-6">
-    {!! Form::label('status_kesuburan', 'Status Kesuburan:') !!}
-    {!! Form::select('status_kesuburan', array('Sangat Rendah' => 'Sangat Rendah', 'Rendah' => 'Rendah', 'Sedang' => 'Sedang', 'Tinggi' => 'Tinggi', 'sangat_Tinggi' => 'Sangat Tinggi'), null, ['class' => 'form-control']) !!}
 </div>

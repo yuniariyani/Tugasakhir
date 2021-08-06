@@ -23,7 +23,7 @@ class monitoringRepository extends BaseRepository
         'kadar_air',
         'suhu_tanah',
         'ph',
-        'status_kesuburan',
+        'subur',
         'kelembaban'
     ];
 

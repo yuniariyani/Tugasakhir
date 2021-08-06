@@ -14,10 +14,11 @@ class BlokLahan extends Model
 
        public function relasigroup(){
        return $this->belongsTo(RelationGroup::class, 'relation_group_id');
-
     }
        public function masalahLahan(){
 
         return $this->hasMany(masalahLahan::class);
     }
 }
+
+       

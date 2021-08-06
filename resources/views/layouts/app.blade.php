@@ -5,8 +5,6 @@
     <title>{{ config('app.name') }}</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
           integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
@@ -42,31 +40,9 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-    <!-- Main Header -->
-    <nav class="main-header navbar navbar-expand navbar-success navbar-light" style="color:#FFFFFF">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button" style="color:#FFFFFF"><i class="fas fa-bars"></i></a>
-      </li>
-    </ul>
-<!-- Right navbar links -->
-<ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown no-arrow">
-        <a class="nav-link" href="#" id="userDropdown" role="button" style="color:#FFFFFF" data-togle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user-circle fa-fw"></i>
-            <span class="hidden-xs"> Yuni Ariyani Arifin </span>
-        </a>
-     </li> 
-    </ul>
-        
-                    
-                    
-                </ul>
-            </li>
-        </ul>
-    </nav>
+    <div class="wrapper">
+        <!-- Main Header -->
+        @include('layouts.header')
 
     <!-- Left side column. contains the logo and sidebar -->
 @include('layouts.sidebar')

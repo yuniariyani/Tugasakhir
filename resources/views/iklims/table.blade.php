@@ -2,20 +2,20 @@
     <table class="table" id="iklims-table">
         <thead>
         <tr>
-        <th>Tanggal</th>
+            <th>Tanggal</th>
         <th>Kelompok Tani</th>
         <th>Komoditas</th>
         <th>Cuaca</th>
-        <th>Suhu (ºC)</th>
+        <th>Suhu</th>
             <th colspan="3">Action</th>
         </tr>
         </thead>
         <tbody>
         @foreach($iklims as $iklim)
             <tr>
-            <td>{{ $iklim->tanggal }}</td>
+                <td>{{ $iklim->tanggal }}</td>
             <td>{{ $iklim->poktan->nama_kelompok}}</td>
-            <td>{{ $iklim->jenis->komoditas}}</td>
+            <td>{{ $iklim->komoditas }}</td>
             <td>{{ $iklim->cuaca }}</td>
             <td>{{ $iklim->suhu }}</td>
                 <td width="120">
