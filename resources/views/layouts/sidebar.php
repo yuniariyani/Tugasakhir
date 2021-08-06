@@ -135,13 +135,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../forms/general.html" class="nav-link" style="color:#FFFFFF">
+                <a href="hasilPanens" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
                   <p>Panen</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../forms/advanced.html" class="nav-link" style="color:#FFFFFF">
+                <a href="pendapatans" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
                   <p>Pendapatan</p>
                 </a>
@@ -159,13 +159,13 @@
             </a>
             <ul class="nav nav-treeview" >
               <li class="nav-item">
-                <a href="../tables/simple.html" class="nav-link" style="color:#FFFFFF">
+                <a href="riwayatPupuks" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
                   <p>Pemupukan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../tables/data.html" class="nav-link" style="color:#FFFFFF">
+                <a href="riwayatPenanganans" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
                   <p>Hama & Penyakit</p>
                 </a>

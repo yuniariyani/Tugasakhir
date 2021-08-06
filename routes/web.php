@@ -158,3 +158,33 @@ Route::get('/delete-issue/{id}','App\Http\Controllers\IssueController@destroy')-
 Route::get('/edit-issue/{id}','App\Http\Controllers\IssueController@edit')->name('edit-issue');
 Route::post('/update-issue/{id}','App\Http\Controllers\IssueController@update')->name('update-issue');
 
+
+//Fitur aktual cost
+Route::get('/aktualcost','App\Http\Controllers\AktualcostController@index')->name('aktualcost');
+Route::get('/create-aktual','App\Http\Controllers\AktualcostController@create')->name('create-aktual');
+Route::post('/simpan-aktual','App\Http\Controllers\AktualcostController@store')->name('simpan-aktual');
+Route::get('/delete-aktual/{id}','App\Http\Controllers\AktualcostController@destroy')->name('delete-aktual');
+Route::get('/edit-aktual/{id}','App\Http\Controllers\AktualcostController@edit')->name('edit-aktual');
+Route::post('/update-aktual/{id}','App\Http\Controllers\AktualcostController@update')->name('update-aktual');
+Route::get('/detailaktual/{id}','App\Http\Controllers\AktualcostController@show')->name('detailaktual');
+
+//Fitur Detail Aktual Cost
+Route::get('/detailaktual','App\Http\Controllers\DetailAktualController@index')->name('detailaktual');
+Route::get('/create-detailaktual','App\Http\Controllers\DetailAktualController@create')->name('create-detailaktual');
+Route::post('/simpan-detailaktual','App\Http\Controllers\DetailAktualController@store')->name('simpan-detailaktual');
+Route::get('/edit-detailaktual/{id}','App\Http\Controllers\DetailAktualController@edit')->name('edit-detailaktual');
+Route::post('/update-detailaktual/{id}','App\Http\Controllers\DetailAktualController@update')->name('update-detailaktual');
+Route::get('/delete-detailaktual/{id}','App\Http\Controllers\DetailAktualController@destroy')->name('delete-detailaktual');
+
+
+
+
+
+Route::resource('hasilPanens', App\Http\Controllers\hasil_panenController::class);
+
+Route::resource('riwayatPupuks', App\Http\Controllers\riwayat_pupukController::class);
+
+Route::resource('pendapatans', App\Http\Controllers\pendapatanController::class);
+
+Route::resource('riwayatPenanganans', App\Http\Controllers\riwayat_penangananController::class);
+
