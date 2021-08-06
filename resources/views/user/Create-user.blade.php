@@ -32,25 +32,34 @@
                     
 
                         <div class="form-group">
+                            <label for="username">Username</label>
                             <input type="text" id="username" name="username" class="form-control" placeholder="Username">
                         </div>
                         <div class="form-group">
+                            <label for="name">Deskripsi</label>
                             <input type="text" id="name" name="name" class="form-control" placeholder="Deskripsi">
                         </div>
                         <div class="form-group">
+                            <label for="email">Email</label>
                             <input type="text" id="email" name="email" class="form-control" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <input type="text" id="level" name="level" class="form-control" placeholder="Level">
+                            <label for="exampleFormControlSelect1">Level User</label>
+                            <select class="form-control" name="level" id="level" >
+                                    <option value="admin">Admin</option>
+                                    <option value="penyuluh">Penyuluh</option>
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <input type="password" id="password" name="password" class="form-control" placeholder="Level">
+                            <label for="pass">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="password">
                         </div>
                         
   
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-sm"> Simpan Data </button>
+                            <a href="{{route('user')}}" class="btn btn-primary btn-sm ess" >Kembali</a>
                         </div>
 
                     </form>

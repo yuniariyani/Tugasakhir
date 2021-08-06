@@ -10,10 +10,10 @@ class Progress extends Model
     protected $table = "progress";
     protected $primaryKey = "id";
     protected $fillable = [
-       'id','proyek_id','tgl','progress','foto'];
+       'id','bantuan_dana_id','tgl','progress','foto'];
     
-    public function relasiproyek(){
-    return $this->belongsTo(Proyek::class, 'proyek_id');
+    public function rbantuandana(){
+    return $this->belongsTo(BantuanDana ::class, 'bantuan_dana_id');
     }
 
     

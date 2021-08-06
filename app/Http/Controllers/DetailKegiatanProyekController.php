@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DetailPlanning;
-use App\Models\Proyek;
+use App\Models\BantuanDana;
+use Illuminate\Support\Facades\DB;
 
 
 class DetailKegiatanProyekController extends Controller
@@ -17,7 +18,7 @@ class DetailKegiatanProyekController extends Controller
     public function index()
     {
          $dtplan = DetailPlanning::all();
-         return view('proyek.detail-kegiatan',compact('dtplan'));
+         return view('bantuan.detail-kegiatan',compact('dtplan'));
     }
 
     /**
@@ -25,10 +26,11 @@ class DetailKegiatanProyekController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $hin = Proyek::all();
-        return view ('proyek.create-detail',compact('hin'));
+        $id_dana = $request->id_dana;
+        $hin = BantuanDana::all();
+        return view ('bantuan.create-detail')->with(['id_dana' => $id_dana, 'hin' => $hin]);
     }
 
     /**
@@ -40,16 +42,17 @@ class DetailKegiatanProyekController extends Controller
     public function store(Request $request)
     {
          DetailPlanning::create([
-            'proyek_id' => $request->proyek_id,
+            'bantuan_dana_id' => $request->bantuan_dana_id,
             'kegiatan' => $request->kegiatan,
             'sub_kegiatan' => $request->sub_kegiatan,
             'durasi' => $request->durasi,
             'start' => $request->start,
             'finish' => $request->finish,
+
              
         ]);  
-
-         return redirect('detail-kegiatan');
+     
+        return redirect ('detailkegiatan/'.$request->id_dana);
     }
 
     /**
@@ -60,8 +63,9 @@ class DetailKegiatanProyekController extends Controller
      */
     public function show($id)
     {
-        $dtplan = DetailPlanning::all()->where('proyek_id', $id);
-        return view('proyek.detail-kegiatan',compact('dtplan'));
+        $id_dana = $id;
+        $dtplan = DetailPlanning::all()->where('bantuan_dana_id', $id);
+        return view('bantuan.detail-kegiatan')->with(['id_dana' => $id_dana, 'dtplan' => $dtplan]);
     }
 
     /**
@@ -72,9 +76,10 @@ class DetailKegiatanProyekController extends Controller
      */
     public function edit($id)
     {
-        $hin = Proyek::all();
+    
+        $hin = BantuanDana::all();
         $peg = DetailPlanning::findorfail($id);
-        return view ('proyek.Edit-detail',compact('peg','hin'));
+        return view ('bantuan.Edit-detail',compact('peg','hin'));
     }
 
     /**

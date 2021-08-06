@@ -10,9 +10,9 @@ class DetailAktual extends Model
     protected $table = "detail_aktual";
     protected $primaryKey = "id";
     protected $fillable = [
-       'id','aktual_id','tgl','item','sub_item','cost_day','quantity','total','foto'];
+       'id','bantuan_dana_id','tgl','item','sub_item','spesifikasi','cost_day','quantity','total','foto'];
     
-    public function aktual(){
-    return $this->belongsTo(Aktualcost::class, 'aktual_id');
+    public function rbantuandana(){
+    return $this->belongsTo(BantuanDana::class, 'bantuan_dana_id');
     } 
 }

@@ -12,11 +12,22 @@ class AnggotaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $dtanggota = AnggotaTani::all();
-        return view ('kelompok.anggota',compact('dtanggota'));
+        $nama_kelompok = RelationGroup::all();
+        $selected = "";
+        return view ('kelompok.anggota',compact('dtanggota','selected','nama_kelompok'));
 
+    }
+    public function empAnggota($id)
+    {
+   
+        $dtanggota = AnggotaTani::where('relation_group_id', $id)->get();
+        $nama_kelompok = RelationGroup::all();
+        $selected = RelationGroup::where('id', $id)->get()->first();
+        $selected = $selected->id;
+        return view('kelompok.anggota', compact('dtanggota', 'nama_kelompok', 'selected'));
     }
 
     /**

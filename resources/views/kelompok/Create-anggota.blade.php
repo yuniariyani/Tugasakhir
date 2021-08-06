@@ -30,6 +30,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group">
+                        <label for="exampleFormControlSelect1">Nama Kelompok</label>
                         <select class="form-control select2" name="relation_group_id" id="relation_group_id" placeholder="Nama Kelompok">
 
                         <option disabled value>Pilih kelompok</option>
@@ -40,13 +41,21 @@
                        </div>
 
                         <div class="form-group">
+                            <label for="exampleFormControlSelect1">Nama Petani</label>
                             <input type="text" id="nama_petani" name="nama_petani" class="form-control" placeholder="Nama Petani">
                         </div>
                         <div class="form-group">
+                            <label for="exampleFormControlSelect1">No HP</label>
                             <input type="text" id="nohp" name="nohp" class="form-control" placeholder="No.HP">
                         </div>
                         <div class="form-group">
-                            <input type="text" id="jabatan" name="jabatan" class="form-control" placeholder="Jabatan">
+                            <label for="exampleFormControlSelect1">Jabatan</label>
+                            <select class="form-control" name="jabatan" id="jabatan" >
+                                    <option value="Ketua Kelompok">Ketua Kelompok</option>
+                                    <option value="Sekertaris">Sekertaris</option>
+                                    <option value="Bendahara">Bendahara</option>
+                                    <option value="Anggota">Anggota</option>           
+                            </select>
                         </div>
                         
 

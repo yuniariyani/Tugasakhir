@@ -11,10 +11,10 @@ class DetailPlanning extends Model
     protected $table = "detail_planning";
     protected $primaryKey = "id";
     protected $fillable = [
-       'id','proyek_id','kegiatan','sub_kegiatan','durasi','start','finish'];
+       'id','bantuan_dana_id','kegiatan','sub_kegiatan','durasi','start','finish'];
 
-    public function proyek(){
-    return $this->belongsTo(Proyek::class, 'proyek_id');
+    public function rbantuandana(){
+    return $this->belongsTo(BantuanDana::class, 'bantuan_dana_id');
     }  
     
    

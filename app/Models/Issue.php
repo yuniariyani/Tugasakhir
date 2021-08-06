@@ -10,9 +10,9 @@ class issue extends Model
     protected $table = "issue";
     protected $primaryKey = "id";
     protected $fillable = [
-       'id','proyek_id','tgl','masalah','deskripsi','tingkat'];
+       'id','bantuan_dana_id','tgl','masalah','deskripsi','tingkat'];
 
-    public function relasiproyek(){
-    return $this->belongsTo(Proyek::class, 'proyek_id');
+    public function rbantuandana(){
+    return $this->belongsTo(BantuanDana::class, 'bantuan_dana_id');
     }
 }

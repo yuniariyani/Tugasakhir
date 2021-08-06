@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Progress;
-use App\Models\Proyek;
+use App\Models\BantuanDana;
 
 class ProgressController extends Controller
 {
@@ -13,10 +13,21 @@ class ProgressController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $dtprogress = Progress::all(); 
-        return view('progress-report.progress', compact('dtprogress'));
+        $dtprogress = Progress::all();
+        $nama_kelompok = BantuanDana::all();
+        $selected = ""; 
+        return view('progress-report.progress', compact('dtprogress','nama_kelompok','selected'));
+    }
+    public function empKode($id)
+    {
+   
+        $dtprogress = Progress::where('bantuan_dana_id', $id)->get();
+        $nama_kelompok = BantuanDana::all();
+        $selected = BantuanDana::where('id', $id)->get()->first();
+        $selected = $selected->id;
+        return view('progress-report.progress', compact('dtprogress', 'nama_kelompok', 'selected'));
     }
 
     /**
@@ -26,7 +37,7 @@ class ProgressController extends Controller
      */
     public function create()
     {
-        $hin = Proyek::all();
+        $hin = BantuanDana::all();
         return view ('progress-report.create-progress',compact('hin'));
     }
 
@@ -48,7 +59,7 @@ class ProgressController extends Controller
       $new_image = rand().'.'.$image->getClientOriginalExtension();
 
       $data_progress = new Progress;
-      $data_progress->proyek_id = $request->proyek_id;
+      $data_progress->bantuan_dana_id = $request->bantuan_dana_id;
       $data_progress->progress = $request->progress;
       $data_progress->tgl = $request->tgl;
       $data_progress->foto = $new_image;
@@ -78,7 +89,7 @@ class ProgressController extends Controller
      */
     public function edit($id)
     {
-        $hin = Proyek::all();
+        $hin = BantuanDana::all();
         $dt = Progress::findorfail($id);
         return view('progress-report.edit-progress', compact('dt','hin'));
     }
@@ -99,7 +110,7 @@ class ProgressController extends Controller
         if($image != ''){
 
           $request->validate([
-          'proyek_id' => 'required',
+          'bantuan_dana_id' => 'required',
           'tgl' => 'required',
           'progress' => 'required',
           'foto' =>'required|image|mimes:jepg,png,jpg|max:2048'
@@ -109,7 +120,7 @@ class ProgressController extends Controller
 
         }else{
          $request->validate([
-          'proyek_id' => 'required',
+          'bantuan_dana_id' => 'required',
           'tgl' => 'required',
           'progress' => 'required', 
             
@@ -119,7 +130,7 @@ class ProgressController extends Controller
 
     }
       $data_progress = array(
-      'proyek_id' => $request->proyek_id,
+      'bantuan_dana_id' => $request->bantuan_dana_id,
       'progress' => $request->progress,
       'tgl' => $request->tgl,
       'foto' => $image_name,

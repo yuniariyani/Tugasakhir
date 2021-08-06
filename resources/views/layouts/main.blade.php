@@ -14,7 +14,7 @@
 
   @yield('custom-css')
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
 <!-- Site wrapper -->
 <div class="wrapper">
     
@@ -33,7 +33,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>@yield('title2','Blank Page')</h1>
+            <h1><strong>@yield('title2','Blank Page')</strong></h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

@@ -36,17 +36,25 @@ class UserMController extends Controller
      */
     public function store(Request $request)
     {
-             UserM::create([
-            'username' => $request->username,
-            'email' => $request->email,
-            'name' => $request->name,
-            'level' => $request->level,
-            'password' => $request->password,
-             
-             
-        ]);  
+        $request->validate([
+               'username' => 'required',
+               'email' => 'required',  
+               'name' => 'required',
+               'level' => 'required',
+               'password' => 'required' 
+        ]);
 
-        return redirect('user');
+        $array = $request->only([
+            'username','email','name','level','password'
+        ]);
+
+        $array['password'] = bcrypt($array['password']);
+        
+        $user = UserM::create($array);
+        return redirect()->route('user');
+             
+      
+
     }
 
     /**
@@ -68,7 +76,7 @@ class UserMController extends Controller
      */
     public function edit($id)
     {
-        //
+      
     }
 
     /**
@@ -80,7 +88,7 @@ class UserMController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         
     }
 
     /**
