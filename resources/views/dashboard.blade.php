@@ -1,36 +1,113 @@
-@extends('layouts.main')
-@section('title','Dashboard')
+@extends('layouts.app')
 @push('custom-css')
-<style>
-    body{
-        font-family: 'Numito';
-    }
-
-</style>
-@endpush
 @section('content')
-@section('title2','Dashboard')
 @section('title1','Dashboard')
-<div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Title</h3>
+@section('title2','Dashboard')
+<section class="content">
+<br>
+<div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div>
+                <h3>&emsp;Dashboard</h3>
+                </div>
+            </div>
+        </div>
 
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-              <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-              <i class="fas fa-times"></i>
-            </button>
+
+<section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>{{$total_kelompok}}</h3>
+                <p>Kelompok Tani</p>
+              </div>
+              <div class="icon">
+              <i class="material-icons">groups</i>
+              </div>
+            </div>
           </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>53</h3>
+                <p>Penyuluh</p>
+              </div>
+              <div class="icon">
+              <i class="material-icons">people</i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-primary">
+              <div class="inner">
+                <h3>{{$anggota_kelompok}}</h3>
+                <p>Anggota Kelompok Tani</p>
+              </div>
+              <div class="icon">
+              <i class="material-icons">assignment_ind</i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>13</h3>
+                <p>Hasil Panen</p>
+              </div>
+              <div class="icon">
+              <i class="material-icons">grass</i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
         </div>
-        <div class="card-body">
-          Start creating your amazing application!
         </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
         </div>
-        <!-- /.card-footer-->
-      </div>
+        
+   <!-- tabel-->
+   <div class="container-fluid">
+   <h4 style="color: red"> Masalah Penting </h4>
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+    <div class="table-responsive">
+    <table class="table">
+
+        <thead>
+        <tr>
+        <th>Tanggal</th>
+        <th>Kelompok Tani</th>
+        <th>Masalah Lahan</th>
+        <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($masalahs as $masalah)
+            <tr>
+            <td>{{ $masalah->tanggal }}</td>
+            <td>{{ $masalah->masalah->nama_kelompok }}</td>
+            <td>{{ $masalah->masalah_lahan }}</td>
+            <td style="color: red">{{ $masalah->status}}</td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+   
+
+
+
 @endsection

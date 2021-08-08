@@ -105,19 +105,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../UI/general.html" class="nav-link" style="color:#FFFFFF">
+                <a href="monitorings" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
                   <p>Tanah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../UI/icons.html" class="nav-link" style="color:#FFFFFF">
+                <a href="iklims" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
                   <p>Iklim</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../UI/buttons.html" class="nav-link" style="color:#FFFFFF">
+                <a href="masalahs" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
                   <p>Masalah</p>
                 </a>
