@@ -39,7 +39,7 @@ Route::group(['middleware'=>['auth']], function(){
     });
 
     Route::group(['middleware' => ['cek_login:penyuluh']], function(){
-          Route::get('developer','App\Http\Controllers\DeveloperController@index')->name('developer');
+          Route::get('penyuluh','App\Http\Controllers\DashboardController@index')->name('penyuluh');
         
     });
 });

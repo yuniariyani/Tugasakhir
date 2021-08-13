@@ -9,7 +9,7 @@
         <div class="row">
           <div class="col-12">
             <div>
-                <h3>&emsp;Dashboard</h3>
+               
                 </div>
             </div>
         </div>
@@ -74,10 +74,12 @@
         </div>
         </div>
         </div>
+      
+        <br>
         
    <!-- tabel-->
    <div class="container-fluid">
-   <h4 style="color: red"> Masalah Penting </h4>
+   <h4><b> Masalah Penting </b></h4>
         <div class="row">
           <div class="col-12">
             <div class="card">
