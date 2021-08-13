@@ -26,9 +26,6 @@ Route::get('/komoditas', function () {
 });
 
 
-
-
-
 Route::get('login','App\Http\Controllers\AuthController@index')->name('login');
 Route::post('proses_login','App\Http\Controllers\AuthController@proses_login')->name('proses_login');
 Route::get('logout','App\Http\Controllers\AuthController@logout')->name('logout');
@@ -39,7 +36,9 @@ Route::group(['middleware'=>['auth']], function(){
     });
 
     Route::group(['middleware' => ['cek_login:penyuluh']], function(){
+
           Route::get('penyuluh','App\Http\Controllers\DashboardController@index')->name('penyuluh');
+
         
     });
 });

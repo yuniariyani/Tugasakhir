@@ -17,7 +17,7 @@
             border: 1px solid #543535;
         }
     </style>
-    <title>Cetak data cost</title>
+    <title>BAST</title>
     </head>
     <body>
     <br>
@@ -29,6 +29,9 @@
 	<p style=" margin: 0px 0px 5px 14px !important;"><b>Kelompok Tani      :</b>  {{ $item->relasigroup->nama_kelompok }} </p>
   <p style=" margin: 0px 14px 10px 14px !important;"><b>Nama Bantuan Dana  :</b>  {{ $item->nama_bantuan}} </p>
         @endforeach
+        
+        <br>
+         <p style=" margin: 0px 14px 10px 14px !important;">1. Anggaran Biaya Bantuan Dana</p>
 	      <table class='table table-bordered'  style="width:98%;" align="center" >
                   <thead>
                   <tr>
@@ -78,7 +81,7 @@
         
 
         <div class="form-group">
-                 
+                  <p style=" margin: 0px 14px 10px 14px !important;">2. Pengeluaran Penggunaan Bantuan Dana</p>
                   <table class='table table-bordered'  style="width:98%;" align="center" >
                   <thead>
                   <tr>
@@ -156,9 +159,9 @@
          </div>
           
           
- <!--   <script type="text/javascript">
+ <script type="text/javascript">
       window.print();
-    </script> -->
+    </script> 
     </body>
     </html>
     
