@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
 //Route::get('/anggota', function () {
     //return view('kelompok.anggota');
 //});
@@ -36,11 +32,13 @@ Route::get('logout','App\Http\Controllers\AuthController@logout')->name('logout'
 
 Route::group(['middleware'=>['auth']], function(){
     Route::group(['middleware' => ['cek_login:admin']], function(){
-        Route::get('admin','App\Http\Controllers\AdminController@index')->name('admin');
+        Route::get('admin','App\Http\Controllers\DashboardController@index')->name('admin');
     });
 
     Route::group(['middleware' => ['cek_login:penyuluh']], function(){
-          Route::get('penyuluh','App\Http\Controllers\PenyuluhController@index')->name('penyuluh');
+
+          Route::get('penyuluh','App\Http\Controllers\DashboardController@index')->name('penyuluh');
+
         
     });
 });
@@ -57,6 +55,8 @@ Route::resource('monitorings', App\Http\Controllers\monitoringController::class)
 Route::resource('iklims', App\Http\Controllers\iklimController::class);
 
 Route::resource('masalahs', App\Http\Controllers\masalahController::class);
+
+Route::resource('dashboard', App\Http\Controllers\DashboardController::class);
 
 Route::get('monitorings/kelompok/{id}', 'App\Http\Controllers\monitoringController@empKelompok');
 

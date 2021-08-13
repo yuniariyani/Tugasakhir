@@ -3,14 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Aktualcost;
+use App\Models\Proyek;
+use App\Models\CostBaseline;
+use App\Models\DetailAktual;
 use App\Models\RelationGroup;
 use App\Models\masalah;
 use App\Models\AnggotaTani;
 
-class AdminController extends Controller
+class DashboardController extends Controller
 {
-      public function index(){
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     **/
+    public function index()
+    {
         $masalahs = masalah::where('status','Tinggi')->get();
         $nama_kelompok = RelationGroup::all();
   
@@ -25,7 +34,6 @@ class AdminController extends Controller
           'anggota_kelompok' => $anggota_kelompok,
           'masalahs' => $masalahs,
           'nama_kelompok' => $nama_kelompok,
-        ]);
-
-    }
+      ]);
+   }
 }
