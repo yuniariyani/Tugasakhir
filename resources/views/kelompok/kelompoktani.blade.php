@@ -43,6 +43,7 @@
                     <th>Wilayah Lahan</th>
                     <th>Alamat Lahan Percontohan</th>
                     <th>Aksi</th>
+                     
                   </tr>
                   </thead>
                   <tbody>
@@ -56,12 +57,13 @@
                     <td>{{ $item->wilayah_lahan }}</td>
                     <td>{{ $item->alamat_lahan }}</td>
                   
-                 
+                      
                       <td>
                       <a href=""><i class="fas fa-edit"></i></a> 
                       | <a href="{{ url('delete-kelompoktani',$item->id)}}"><i class="fas fa-trash-alt" style="color:red"></i></a>
 
                     </td>
+                           
                     </tr>
      
                     @endforeach

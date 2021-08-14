@@ -74,12 +74,12 @@ class DetailKegiatanProyekController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-    
+        $id_dana = $request->id_dana;
         $hin = BantuanDana::all();
         $peg = DetailPlanning::findorfail($id);
-        return view ('bantuan.Edit-detail',compact('peg','hin'));
+        return view ('bantuan.Edit-detail')->with(['peg' => $peg,'hin' => $hin, 'id_dana' => $id_dana]);
     }
 
     /**
@@ -91,9 +91,12 @@ class DetailKegiatanProyekController extends Controller
      */
     public function update(Request $request, $id)
     {
+      
         $peg = DetailPlanning::findorfail($id);
         $peg->update($request->all());
-        return redirect('detail-kegiatan');
+
+        
+        return redirect ('detailkegiatan/'.$request->id_dana);
     }
 
     /**
@@ -104,7 +107,7 @@ class DetailKegiatanProyekController extends Controller
      */
     public function destroy($id)
     {
-         $peg = DetailPlanning::findorfail($id);
+          $peg = DetailPlanning::findorfail($id);
           $peg->delete();
           return back()->with('info','dihapus');
     }

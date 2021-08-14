@@ -36,10 +36,8 @@ Route::group(['middleware'=>['auth']], function(){
     });
 
     Route::group(['middleware' => ['cek_login:penyuluh']], function(){
-
           Route::get('penyuluh','App\Http\Controllers\DashboardController@index')->name('penyuluh');
 
-        
     });
 });
 
@@ -128,8 +126,8 @@ Route::post('/update-detailcost/{id}','App\Http\Controllers\CostBaselineControll
 Route::get('/create-detailakt','App\Http\Controllers\CostBaselineController@createaktual')->name('create-detailakt');
 Route::post('/simpan-detailakt','App\Http\Controllers\CostBaselineController@storeaktual')->name('simpan-detailakt');
 Route::get('/delete-detailakt/{id}','App\Http\Controllers\CostBaselineController@destroyaktual')->name('delete-detailakt');
-Route::get('/edit-detailakt/{id}','App\Http\Controllers\CostBaselineController@editaktual')->name('edit-detailakt');
-Route::post('/update-detailakt/{id}','App\Http\Controllers\CostBaselineController@updateaktual')->name('update-detailakt');
+Route::get('/edit-detailak/{id}','App\Http\Controllers\CostBaselineController@editaktual')->name('edit-detailak');
+Route::post('/update-detailak/{id}','App\Http\Controllers\CostBaselineController@updateaktual')->name('update-detailak');
 
 //cetak laporan
 Route::get('/cetakcost/{id}','App\Http\Controllers\CostBaselineController@cetakCost')->name('cetakcost');
@@ -157,21 +155,21 @@ Route::post('/update-issue/{id}','App\Http\Controllers\IssueController@update')-
 
 
 //Fitur aktual cost
-Route::get('/aktualcost','App\Http\Controllers\AktualcostController@index')->name('aktualcost');
-Route::get('/create-aktual','App\Http\Controllers\AktualcostController@create')->name('create-aktual');
-Route::post('/simpan-aktual','App\Http\Controllers\AktualcostController@store')->name('simpan-aktual');
-Route::get('/delete-aktual/{id}','App\Http\Controllers\AktualcostController@destroy')->name('delete-aktual');
-Route::get('/edit-aktual/{id}','App\Http\Controllers\AktualcostController@edit')->name('edit-aktual');
-Route::post('/update-aktual/{id}','App\Http\Controllers\AktualcostController@update')->name('update-aktual');
-Route::get('/detailaktual/{id}','App\Http\Controllers\AktualcostController@show')->name('detailaktual');
+//Route::get('/aktualcost','App\Http\Controllers\AktualcostController@index')->name('aktualcost');
+//Route::get('/create-aktual','App\Http\Controllers\AktualcostController@create')->name('create-aktual');
+//Route::post('/simpan-aktual','App\Http\Controllers\AktualcostController@store')->name('simpan-aktual');
+//Route::get('/delete-aktual/{id}','App\Http\Controllers\AktualcostController@destroy')->name('delete-aktual');
+//Route::get('/edit-aktual/{id}','App\Http\Controllers\AktualcostController@edit')->name('edit-aktual');
+//Route::post('/update-aktual/{id}','App\Http\Controllers\AktualcostController@update')->name('update-aktual');
+//Route::get('/detailaktual/{id}','App\Http\Controllers\AktualcostController@show')->name('detailaktual');
 
 //Fitur Detail Aktual Cost
-Route::get('/detailaktual','App\Http\Controllers\DetailAktualController@index')->name('detailaktual');
-Route::get('/create-detailaktual','App\Http\Controllers\DetailAktualController@create')->name('create-detailaktual');
-Route::post('/simpan-detailaktual','App\Http\Controllers\DetailAktualController@store')->name('simpan-detailaktual');
-Route::get('/edit-detailaktual/{id}','App\Http\Controllers\DetailAktualController@edit')->name('edit-detailaktual');
-Route::post('/update-detailaktual/{id}','App\Http\Controllers\DetailAktualController@update')->name('update-detailaktual');
-Route::get('/delete-detailaktual/{id}','App\Http\Controllers\DetailAktualController@destroy')->name('delete-detailaktual');
+//Route::get('/detailaktual','App\Http\Controllers\DetailAktualController@index')->name('detailaktual');
+//Route::get('/create-detailaktual','App\Http\Controllers\DetailAktualController@create')->name('create-detailaktual');
+//Route::post('/simpan-detailaktual','App\Http\Controllers\DetailAktualController@store')->name('simpan-detailaktual');
+//Route::get('/edit-detailaktual/{id}','App\Http\Controllers\DetailAktualController@edit')->name('edit-detailaktual');
+//Route::post('/update-detailaktual/{id}','App\Http\Controllers\DetailAktualController@update')->name('update-detailaktual');
+//Route::get('/delete-detailaktual/{id}','App\Http\Controllers\DetailAktualController@destroy')->name('delete-detailaktual');
 
 
 

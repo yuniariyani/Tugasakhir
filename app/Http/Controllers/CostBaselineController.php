@@ -191,14 +191,12 @@ class CostBaselineController extends Controller
           'cost_day' => 'required',
           'quantity' => 'required',
           'total' => 'required',
-          'foto' =>'required|image|mimes:jepg,png,jpg|max:2048',
-
-
+          'foto' => 'required|image|mimes:jepg,png,jpg|max:2048'
       ]);
-      $image_name = $old_image_name;
-      $image->move(public_path('img'), $image_name);
-
-        }else{
+        $image_name = $old_image_name;
+        $image->move(public_path('img'), $image_name);
+      
+    }else{
          $request->validate([
           'bantuan_dana_id' => 'required',
           'tgl' => 'required',
@@ -208,12 +206,13 @@ class CostBaselineController extends Controller
           'cost_day' => 'required',
           'quantity' => 'required',
           'total' => 'required',
-          
+      
+            
       ]);
 
       $image_name = $old_image_name;
 
-    }
+     }
       $data_progress = array(
       'bantuan_dana_id' => $request->bantuan_dana_id,
       'tgl' => $request->tgl,

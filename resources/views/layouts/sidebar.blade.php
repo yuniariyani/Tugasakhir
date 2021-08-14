@@ -35,14 +35,14 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-
+           
                <li class="nav-item">
                 <a href="/kelompoktani" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
                   <p>Master Data Poktan</p>
                 </a>
               </li>
-            
+               
               <li class="nav-item">
                 <a href="/anggota" class="nav-link" style="color:#FFFFFF">
                   <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
@@ -174,17 +174,33 @@
           </li>
 
           
-
-          <li class="nav-header" style="color:#FFFFFF">Settings</li>
+          @if (auth::user()->level == 'admin')
+          <li class="nav-header" style="color:#FFFFFF">user permission</li>
           <li class="nav-item">
             <a href="user" class="nav-link" style="color:#FFFFFF">
               <i class="nav-icon fas fa-users" style="color:#FFFFFF"></i>
               <p>
-                User Management
+                User
               </p>
             </a>
-          </li>
+          </li> 
+          @endif
 
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+          
+            <br>
+            
+            
+            
+         
            <li class="nav-item">
             <a href="logout" class="nav-link" style="color:#FFFFFF">
               <i class="nav-icon fas fa-sign-out-alt" style="color:#FFFFFF"></i>

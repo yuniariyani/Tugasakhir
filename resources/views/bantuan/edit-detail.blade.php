@@ -65,7 +65,7 @@
                         
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-sm"> Ubah Data </button>
-                            <a href="{{route('detail-kegiatan')}}" class="btn btn-primary btn-sm ess" >Kembali</a>
+                            <a href="{{ url()->previous()}}" class="btn btn-primary btn-sm ess" >Kembali</a>
                         </div>
 
                     </form>
