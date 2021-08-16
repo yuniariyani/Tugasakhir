@@ -158,7 +158,7 @@
                     <td width="120">
                       
                       <a href="{{ asset('img/'.$pp->foto) }}" target="_blank" rel="noopener noreferrer"><i class="far fa-file-image"> </i></a> |
-                      <a href="{{ url('edit-detailakt',$pp->id) }}"><i class="fas fa-edit"></i></a> |
+                      <a href="{{ url('edit-detailak',$pp->id) }}"><i class="fas fa-edit"></i></a> |
                       <a href="{{ url('delete-detailakt',$pp->id) }}"><i class="fas fa-trash-alt" style="color:red"></i></a>
                       
                     </td>

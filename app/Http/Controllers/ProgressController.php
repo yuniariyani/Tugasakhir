@@ -20,6 +20,7 @@ class ProgressController extends Controller
         $selected = ""; 
         return view('progress-report.progress', compact('dtprogress','nama_kelompok','selected'));
     }
+    
     public function empKode($id)
     {
    

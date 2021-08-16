@@ -25,7 +25,7 @@
 
                  <div class="card-body">
                  
-                    <form action="{{ route('update-detailakt', $dt->id) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('update-detailak', $dt->id) }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="form-group">
@@ -38,6 +38,11 @@
                             @endforeach
                         </select>
                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Total</label>
+                            <input type="date" id="tgl" name="tgl" class="form-control" placeholder="total" value="{{$dt->tgl}}">
+                        </div>
 
                          <div class="form-group">
                             <label for="exampleFormControlSelect1">WBS Item</label>
