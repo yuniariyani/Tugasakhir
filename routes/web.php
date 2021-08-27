@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,6 +56,8 @@ Route::resource('iklims', App\Http\Controllers\iklimController::class);
 Route::resource('masalahs', App\Http\Controllers\masalahController::class);
 
 Route::resource('dashboard', App\Http\Controllers\DashboardController::class);
+
+
 
 Route::get('monitorings/kelompok/{id}', 'App\Http\Controllers\monitoringController@empKelompok');
 

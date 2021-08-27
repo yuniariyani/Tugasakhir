@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\RelationGroup;
 use App\Models\masalah;
 use App\Models\AnggotaTani;
+use App\Models\hasil_panen;
 
 class AdminController extends Controller
 {
@@ -17,7 +18,8 @@ class AdminController extends Controller
         $total_kelompok = RelationGroup::count('nama_kelompok');
         //$penyuluh = //nama db penyulu :: conut(');
         $anggota_kelompok = AnggotaTani::count('nama_petani');
-        //$hasilpanen =
+        
+        $hasilpanen = hasil_panen::count('satuan');
 
 
       return view ('dashboard')->with([
@@ -25,6 +27,7 @@ class AdminController extends Controller
           'anggota_kelompok' => $anggota_kelompok,
           'masalahs' => $masalahs,
           'nama_kelompok' => $nama_kelompok,
+          'satuan' => $hasilpanen,
         ]);
 
     }

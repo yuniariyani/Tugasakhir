@@ -28,8 +28,9 @@
               <div class="card-body">
                  <div class="timeline-header ">
                     <a href="{{route('bantuandana')}}" class="btn btn-primary btn-sm ess" >Kembali</a>
+                    @if (Auth::user()->level == 'admin')
                     <a href="{{ route('create-detailcost') }}" class="btn btn-success btn-sm " >Tambah cost</a>
-                   
+                    @endif
                   </div>
 
                 
@@ -49,7 +50,9 @@
                     <th>Cost (Hari)</th>
                     <th>Qty</th>
                     <th>Total</th>
+                    @if (Auth::user()->level == 'admin')
                     <th>Aksi</th>
+                    @endif
                   </tr>
 
                   </thead>
@@ -66,12 +69,13 @@
                     <td>{{ $item->quantity}}</td>
                     <td>@currency ($item->total)</td>
                  
-                    
+                    @if (Auth::user()->level == 'admin')
                     <td>
                       <a href="{{ url('edit-detailcost',$item->id) }}"><i class="fas fa-edit"></i></a> 
                       | <a href="{{ url('delete-detailcost',$item->id) }}"><i class="fas fa-trash-alt" style="color:red"></i></a>
 
                     </td>
+                    @endif
                     <div style="display: none">{{$total1 += ($item->total)}}</div>
                   </tr>
 

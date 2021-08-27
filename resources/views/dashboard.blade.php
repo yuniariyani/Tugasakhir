@@ -1,8 +1,38 @@
 @extends('layouts.app')
+@section('title','Agrikita')
 @push('custom-css')
 @section('content')
 @section('title1','Dashboard')
 @section('title2','Dashboard')
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          <?php echo $chartData ?>
+          
+        ]);
+
+        var options = {
+          title: 'Bantuan Dana Kelompok Tani'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+       
+   
+ 
+
+
 <section class="content">
 <br>
 <div class="container-fluid">
@@ -36,7 +66,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>53</h3>
+                <h3>{{$penyuluh}}</h3>
                 <p>Penyuluh</p>
               </div>
               <div class="icon">
@@ -62,7 +92,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>13</h3>
+                <h3>0</h3>
                 <p>Hasil Panen</p>
               </div>
               <div class="icon">
@@ -76,39 +106,53 @@
         </div>
       
         <br>
+          
+   
         
-   <!-- tabel-->
-   <div class="container-fluid">
-   <h4><b> Masalah Penting </b></h4>
-        <div class="row">
+  <!-- tabel-->
+  <div class="row">
           <div class="col-12">
             <div class="card">
-    <div class="table-responsive">
-    <table class="table">
+              <div class="card-header">
+                <h3 class="card-title">Masalah Lahan Kelompok Tani</h3>
+                 </div>
+                 <div class="card-body">
+                 <div class="timeline-header">
+                 </div>
 
-        <thead>
-        <tr>
-        <th>Tanggal</th>
-        <th>Kelompok Tani</th>
-        <th>Masalah Lahan</th>
-        <th>Status</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($masalahs as $masalah)
-            <tr>
-            <td>{{ $masalah->tanggal }}</td>
-            <td>{{ $masalah->masalah->nama_kelompok }}</td>
-            <td>{{ $masalah->masalah_lahan }}</td>
-            <td style="color: red">{{ $masalah->status}}</td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
+                 <div class="table-responsive">
+                 <table class="table">
+
+                 <thead>
+                  <tr>
+                  <th>Date</th>
+                  <th>Poktan</th>
+                  <th>Masalah Lahan</th>
+                  <th>Status</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                   @foreach($masalahs as $masalah)
+                   <tr>
+                    <td>{{ date('d/m/Y', strtotime ($masalah->tanggal)) }}</td>
+                    <td>{{ $masalah->masalah->nama_kelompok }}</td>
+                    <td>{{ $masalah->masalah_lahan }}</td>
+                    <td style="color: red">{{ $masalah->status}}</td>
+                   </tr>
+                   @endforeach
+                  </tbody>
+                  </table>
+
     </div>
     </div>
+    </div>
+</div>
+</div>
 
-   
+
+     <div id="piechart" style="width: 1420px; height: 450px;"></div>
+     
+  
 
 
 

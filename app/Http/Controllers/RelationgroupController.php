@@ -41,6 +41,7 @@ class RelationgroupController extends Controller
             'total_anggota' => $request->total_anggota,
             'wilayah_lahan' => $request->wilayah_lahan,
             'alamat_lahan' => $request->alamat_lahan,
+            'penyuluh' => $request->penyuluh,
           
         ]);
 

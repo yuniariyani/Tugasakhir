@@ -10,7 +10,7 @@ class RelationGroup extends Model
     protected $table = "relation_group";
     protected $primaryKey = "id";
     protected $fillable = [
-       'id','nama_kelompok','alamat_lahan','total_anggota','wilayah_lahan'];
+       'id','nama_kelompok','alamat_lahan','total_anggota','wilayah_lahan','penyuluh'];
 
     public function tesbloklahan(){
     return $this->hasMany(BlokLahan::class);
