@@ -26,7 +26,9 @@
               <!-- /.card-header -->
                 <div class="card-body">
                  <div class="timeline-header ">
+                    @if (Auth::user()->level == 'admin')
                     <a href="{{ route('create-kelompoktani') }}" class="btn btn-success btn-sm " >Tambah Poktan</a>
+                    @endif
                   </div>
 
                  <div class="card-body">
@@ -42,7 +44,10 @@
                     <th>Jumlah anggota</th>
                     <th>Wilayah Lahan</th>
                     <th>Alamat Lahan Percontohan</th>
+                    <th>Penyuluh</th>
+                    @if (Auth::user()->level == 'admin')
                     <th>Aksi</th>
+                    @endif
                      
                   </tr>
                   </thead>
@@ -56,13 +61,14 @@
                     <td>{{ $item->total_anggota }}</td>
                     <td>{{ $item->wilayah_lahan }}</td>
                     <td>{{ $item->alamat_lahan }}</td>
-                  
-                      
+                    <td>{{ $item->penyuluh}}</td>
+                      @if (Auth::user()->level == 'admin')
                       <td>
                       <a href=""><i class="fas fa-edit"></i></a> 
                       | <a href="{{ url('delete-kelompoktani',$item->id)}}"><i class="fas fa-trash-alt" style="color:red"></i></a>
 
                     </td>
+                      @endif
                            
                     </tr>
      

@@ -12,6 +12,13 @@
 @section('title2','Anggota Kelompok Tani')
 @section('title1','Anggota Kelompok')
 
+<!--Hak Akses Button/Icon-->
+@switch (session('permission'))
+    @case('admin')
+    @section('penyuluh','hidden')
+    @break
+    @default
+@endswitch
 
 
 
@@ -42,7 +49,9 @@
               <!-- /.card-header -->
               <div class="card-body">
                  <div class="timeline-header ">
+                    @if (Auth::user()->level == 'admin')
                     <a href="{{ route('create-anggota') }}" class="btn btn-success btn-sm " >Tambah Kelompok Tani</a>
+                    @endif
                   </div>
 
                  <div class="card-body">
@@ -58,8 +67,12 @@
                     <th>Nama Petani</th>
                     <th>Jabatan</th>
                     <th>NoHP</th>
-        
+                 
+                     @if (Auth::user()->level == 'admin')
                     <th>Aksi</th>
+                     @endif
+                    
+                  
                   </tr>
 
                   
@@ -74,12 +87,16 @@
                     <td>0{{ $item->nohp }}</td>
                 
                     
-                   
+             
+                    @if (Auth::user()->level == 'admin')
                     <td>
+            
                       <a href="{{ url('click_edit',$item->id)}}"><i class="fas fa-edit"></i></a> 
                       | <a href="{{ url('delete-anggota',$item->id) }}"><i class="fas fa-trash-alt" style="color:red"></i></a>
-
+                      </div>
                     </td>
+                    @endif
+    
                   </tr>
                   @endforeach
                   </tbody>

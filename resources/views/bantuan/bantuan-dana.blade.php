@@ -17,10 +17,14 @@
               <!-- /.card-header -->
               <div class="card-body">
                  <div class="timeline-header ">
+                    @if (Auth::user()->level == 'admin')
                     <a href="{{ route('create-bantuan') }}" class="btn btn-success btn-sm " >Tambah Bantuan Poktan</a>
+                    @endif
                   </div>
 
                   <br>
+
+             
 
                 <table class="table table-bordered table-hover">
                   <thead>
@@ -32,7 +36,10 @@
                     <th>Nama Bantuan</th>
                     <th>Status</th>
                     <th colspan="1">Plan/Cost</th>
+
+                    @if (Auth::user()->level == 'admin')
                     <th>Aksi</th>
+                    @endif
                   </tr>
 
                   
@@ -55,12 +62,13 @@
                        </div>
                     
                     </td>
-                    
+                    @if (Auth::user()->level == 'admin')
                     <td>
                       <a href="{{ url('edit-bantuan',$item->id) }}"><i class="fas fa-edit"></i></a> 
                       | <a href="{{ url('delete-bantuan',$item->id) }}"><i class="fas fa-trash-alt" style="color:red"></i></a>
 
                     </td>
+                    @endif
                   </tr>
                     @endforeach
                   </tbody>

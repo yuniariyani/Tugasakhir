@@ -55,12 +55,7 @@
                   <p>Komoditas Kelompok</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="../layout/fixed-sidebar.html" class="nav-link" style="color:#FFFFFF">
-                  <i class="far fa-circle nav-icon" style="color:#FFFFFF"></i>
-                  <p>Penyuluhan</p>
-                </a>
-              </li>
+              
             </ul>
           </li>
 

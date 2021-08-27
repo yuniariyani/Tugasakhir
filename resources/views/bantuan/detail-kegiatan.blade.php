@@ -30,7 +30,9 @@
                       @csrf
                       @method('post')
                       <input type="hidden" name="id_dana" value="{{$id_dana}}">
+                      @if (Auth::user()->level == 'admin')
                       <button class="btn btn-success btn-sm">Tambah Planning</button>
+                      @endif
                     </form>
                     <!-- <a href="{{route('create-detail')}}" class="btn btn-success btn-sm " >Tambah Planning</a> -->
                     <a href="{{route('bantuandana')}}"  class="btn btn-primary btn-sm ess" >Kembali</a>
@@ -53,7 +55,9 @@
                     <th>Durasi (Hari)</th>
                     <th>Start</th>
                     <th>Finish</th>
+                    @if (Auth::user()->level == 'admin')
                     <th>Aksi</th>
+                    @endif
                   </tr>
 
                   
@@ -69,12 +73,13 @@
                     <td>{{ date('d/m/Y', strtotime($item->start))}}</td>
                     <td>{{ date('d/m/Y', strtotime($item->finish))}}</td>
                  
-                    
+                    @if (Auth::user()->level == 'admin')
                     <td>
                       <a href="{{ url('edit-detail',$item->id) }}"><i class="fas fa-edit"></i></a> 
                       | <a href="{{ url('delete-detail',$item->id) }}"><i class="fas fa-trash-alt" style="color:red"></i></a>
 
                     </td>
+                    @endif
                   </tr>
 
                   

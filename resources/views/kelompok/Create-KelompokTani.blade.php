@@ -57,6 +57,11 @@
                             <input type="text" id="alamat_lahan" name="alamat_lahan" class="form-control" placeholder="Alamat Lahan">
                         </div>
 
+                        <div class="form-group">
+                             <label for="exampleFormControlSelect1">Nama Penyuluh</label>
+                            <input type="text" id="penyuluh" name="penyuluh" class="form-control" placeholder="Nama Penyuluh">
+                        </div>
+
             
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-sm"> Simpan Data </button>

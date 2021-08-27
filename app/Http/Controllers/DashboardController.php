@@ -10,6 +10,10 @@ use App\Models\DetailAktual;
 use App\Models\RelationGroup;
 use App\Models\masalah;
 use App\Models\AnggotaTani;
+use App\Models\pendapatan;
+use App\Models\BantuanDana;
+use App\Models\Penyuluh;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -24,16 +28,22 @@ class DashboardController extends Controller
         $nama_kelompok = RelationGroup::all();
   
         $total_kelompok = RelationGroup::count('nama_kelompok');
-        //$penyuluh = //nama db penyulu :: conut(');
+
+        $penyuluh = Penyuluh :: count('nama_penyuluh');
+
         $anggota_kelompok = AnggotaTani::count('nama_petani');
-        //$hasilpanen =
 
+        $rr = pendapatan::count('satuan');
 
-      return view ('dashboard')->with([
-          'total_kelompok' => $total_kelompok,
-          'anggota_kelompok' => $anggota_kelompok,
-          'masalahs' => $masalahs,
-          'nama_kelompok' => $nama_kelompok,
-      ]);
+        $result=DB::select(DB::raw("select count(*) as total_status, status from bantuan_dana group by status"));
+        $chartData="";
+        foreach($result as $list){
+            $chartData.="['".$list->status."', ".$list->total_status."],";
+        }
+        $arr['chartData']=rtrim($chartData,",");
+
+        return view('dashboard',compact('total_kelompok','anggota_kelompok', 'masalahs','nama_kelompok',
+        'penyuluh','chartData'));
    }
+
 }
