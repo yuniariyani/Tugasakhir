@@ -108,7 +108,7 @@ class riwayat_penangananController extends AppBaseController
             return redirect(route('riwayatPenanganans.index'));
         }
 
-        return view('riwayat_penanganans.edit', compact('riwayatPenanganans', 'nama_kelompok', 'blok_lahan'));
+        return view('riwayat_penanganans.edit', compact('riwayatPenanganan', 'nama_kelompok', 'blok_lahan'));
     }
 
     /**

@@ -19,7 +19,7 @@
             <td>{{ $riwayatPupuk->blok->komoditas }}</td>
             <td>{{ $riwayatPupuk->tanggal_pupuk }}</td>
             <td>{{ $riwayatPupuk->jenis_pupuk }}</td>
-            <td>{{ $riwayatPupuk->dosis_pupuk }}</td>
+            <td>{{ $riwayatPupuk->dosis_pupuk }} gr</td>
                 <td width="120">
                     {!! Form::open(['route' => ['riwayatPupuks.destroy', $riwayatPupuk->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

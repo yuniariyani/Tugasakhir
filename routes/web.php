@@ -21,9 +21,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-//Route::get('/anggota', function () {
-    //return view('kelompok.anggota');
-//});
+Route::get('/anggota', function () {
+    return view('kelompok.anggota');
+});
 
 Route::get('/komoditas', function () {
     return view('komoditas');

@@ -19,7 +19,7 @@
 <!-- Jenis Penanganan Field -->
 <div class="form-group col-sm-12">
     {!! Form::label('jenis_penanganan', 'Jenis Penanganan:') !!}
-    {!! Form::text('jenis_penanganan', null, ['class' => 'form-control']) !!}
+    {!! Form::select('jenis_penanganan', array('Kimiawi' => 'Kimiawi', 'Hayati' => 'Hayati'), null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Deskripsi Field -->

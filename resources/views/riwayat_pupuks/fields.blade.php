@@ -35,7 +35,7 @@
 <!-- Jenis Pupuk Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('jenis_pupuk', 'Jenis Pupuk:') !!}
-    {!! Form::text('jenis_pupuk', null, ['class' => 'form-control']) !!}
+    {!! Form::select('jenis_pupuk', array('Urea' => 'Urea', 'SP-36' => 'SP-36', 'ZA' => 'ZA', 'NPK' => 'NPK', 'Organik' => 'Organik'), null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Dosis Pupuk Field -->
